@@ -1,7 +1,25 @@
 <html>
+<head>
+
+<script type="text/javascript">
+		function callRuby(callbackName, params) {
+				fake_url = 'skp:'+callbackName+'@'+params;
+				window.location.href = fake_url;
+			}
+	</script>
+
+</head>
 <body style="background-color:000;">
-<video id="splashscreen" class="video-js vjs-default-skin" height="100%" width="100%"   preload="auto" autoplay data-setup="{}">
+<video id="splashscreen" class="video-js vjs-default-skin" height="100%" width="100%"  preload="auto" autoplay data-setup="{}">
   <source type="video/mpg" src="splashscreen.mpg">
 </video>
+<script type="text/javascript">
+myVid=document.getElementById("splashscreen");   
+myVid.addEventListener("timeupdate", function() {
+if (myVid.currentTime >= video.duration - 0.01) {
+	callRuby('splashscreen','true'); 
+}}, false);
+
+</script>
 </body>
 </html>

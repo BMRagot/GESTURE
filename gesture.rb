@@ -10,8 +10,8 @@
 #                                                                      
 #	author: B. MARICHAL & A. VERON
 #	date: 02/2013
-#
-#
+#	name: GESTURE Plugins
+#	description: 
 
 
 
@@ -39,12 +39,24 @@ def splashscreen
   	splashscreen_height = 400
   	
   	c = Sketchup.active_model.active_view.center
-  	dlgSplashScreen = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", splashscreen_width, splashscreen_height, c[0]-splashscreen_width/2, c[1]-splashscreen_height/2, true);
+  	dlgSplashScreen = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", splashscreen_width, splashscreen_height, c[0]-splashscreen_width/2, c[1]-splashscreen_height/2, true);
   	dlgSplashScreen.set_file File.dirname(__FILE__) + "/GESTURE/splashscreen.html"
 	
 	dlgSplashScreen.show
 	
-	#load videoplayer
+	dlgSplashScreen.add_action_callback("splashscreen") {|dialog, params|
+	    ## if (params.to_s.equal){dlgSplashScreen.close}
+	     
+	     ##...
+   	}
+	
+	model = Sketchup.active_model
+	view = model.active_view
+	camera = view.camera
+	eye = camera.eye
+	target = camera.target
+	up = camera.up
+	direction = camera.direction	
 	
 	#test all component
 	
