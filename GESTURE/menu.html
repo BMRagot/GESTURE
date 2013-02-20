@@ -1,0 +1,150 @@
+<html>
+<head>
+	
+	<script type="text/javascript">
+		function callRuby(callbackName, params) {
+				fake_url = 'skp:'+callbackName+'@'+params;
+				window.location.href = fake_url;
+			}
+	</script>
+
+	<style type="text/css">	
+	
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}
+
+		#footer {
+			position:absolute;
+			left:0;
+			right:0;
+			bottom:0;
+	
+			width:auto;
+			display:block;
+			overflow:hidden;
+			margin-right:10px;
+			border-radius:5px;
+	
+			/* font */
+			color:#1a1a1a;
+			line-height:1.8;
+			font-size:0.5em;
+			font-weight:normal;
+			text-transform:none;
+			text-decoration:none;
+			font-family:'Chalkduster','Times New Roman',serif;
+	
+			background-color:#F0F2EB;
+			overflow:hidden;
+			margin-right:10px;
+			margin-left:10px;
+			border-radius:5px;
+			padding-top:0px;
+			padding-left:10px;
+			
+			text-align:center;	
+		}		
+								
+		.boutonvert {
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5dc02f), color-stop(1, #32a62e) );
+			background:-moz-linear-gradient( center top, #5dc02f 5%, #32a62e 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5dc02f', endColorstr='#32a62e');
+			background-color:#5dc02f;
+			-moz-border-radius:6px;
+			-webkit-border-radius:6px;
+			border-radius:6px;
+			border:1px solid #ffffff;
+			display:inline-block;
+			color:#49378c;
+			font-family:arial;
+			font-size:15px;
+			font-weight:bold;
+			padding:6px 24px;
+			text-decoration:none;
+		}.boutonvert:hover {
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #32a62e), color-stop(1, #5dc02f) );
+			background:-moz-linear-gradient( center top, #32a62e 5%, #5dc02f 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#32a62e', endColorstr='#5dc02f');
+			background-color:#32a62e;
+		}.boutonvert:active {
+			position:relative;
+			top:1px;
+		}
+				
+		.boutonmauve {
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #69458c), color-stop(1, #49378c) );
+			background:-moz-linear-gradient( center top, #69458c 5%, #49378c 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#69458c', endColorstr='#49378c');
+			background-color:#69458c;
+			-moz-border-radius:6px;
+			-webkit-border-radius:6px;
+			border-radius:6px;
+			border:1px solid #ffffff;
+			display:inline-block;
+			color:#bfbfbf;
+			font-family:arial;
+			font-size:15px;
+			font-weight:bold;
+			padding:6px 24px;
+			text-decoration:none;
+		}.boutonmauve:hover {
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #49378c), color-stop(1, #69458c) );
+			background:-moz-linear-gradient( center top, #49378c 5%, #69458c 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#49378c', endColorstr='#69458c');
+			background-color:#49378c;
+		}.boutonmauve:active {
+			position:relative;
+			top:1px;
+		}
+				
+		
+		#action{
+			position:absolute;
+			left:0;
+			right:0;
+			bottom:50;
+		}
+		
+		
+	</style>
+	
+</head>
+<body>
+	<div id="header">
+		<img src="header.jpg" >		
+	</div>
+	
+	<div id="statut">
+		<hr align="center">
+
+		<h1 align="center">Statut</h1>
+		<table>
+		<tr>
+		<td>
+		XX
+		</td>
+		<td>
+		yy
+		</td>
+		</tr>
+		</table>
+	
+		<hr align="center">
+
+	</div>
+	
+	<div width="100%" id="action">
+	<table width="100%" align="center">
+		<tr>
+			<td align="center"><input type="button" onclick="callRuby('GESTURE_QUIT','')" value="Quitter" class="boutonmauve"/></td>
+			<td align="center"><input type="button" onclick="callRuby('GESTURE_apprentissage','')" value="Mode Apprentissage" class="boutonvert"/></td>
+			<td align="center"><input type="button" onclick="callRuby('GESTURE_START','')" value="D&eacute;marrer" class="boutonvert"/></td>
+		</tr>
+	</table>
+	</div>
+	
+	<div id="footer">
+GESTURE &copy; Copyright 2013
+	</div>
+
+</body>
+</html>
