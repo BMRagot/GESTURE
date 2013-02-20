@@ -35,12 +35,18 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #Splash Screen
 def splashscreen
 
-	splashscreen_width = 640
+	splashscreen_width = 660
   	splashscreen_height = 400
   	
   	c = Sketchup.active_model.active_view.center
+  	
   	dlgSplashScreen = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", splashscreen_width, splashscreen_height, c[0]-splashscreen_width/2, c[1]-splashscreen_height/2, true);
   	dlgSplashScreen.set_file File.dirname(__FILE__) + "/GESTURE/splashscreen.html"
+	
+	dlgSplashScreen.min_height = 400
+  	dlgSplashScreen.min_width = 660
+	dlgSplashScreen.max_height = 400
+  	dlgSplashScreen.max_width = 660
 	
 	dlgSplashScreen.show
 	
