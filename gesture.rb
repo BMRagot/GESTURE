@@ -56,7 +56,10 @@ def splashscreen
 	#callback to get the video statu 
 	dlgSplashScreen.add_action_callback("SPLASHSCREEN_VID") do |js_wd, message|
 		#1 video ended
+		#useless
 		splashscreen_video=message.to_int
+		# just +1 to update
+		
 	end
 
 	#function to update progress bar
