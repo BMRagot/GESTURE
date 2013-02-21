@@ -34,7 +34,8 @@ UI.menu("Plugins").add_item("GESTURE...") {
 
 #Splash Screen
 def splashscreen
-
+	
+	#create WebDialog UI
 	splashscreen_width = 660
   	splashscreen_height = 420
   	
@@ -43,6 +44,8 @@ def splashscreen
   	dlgSplashScreen = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", splashscreen_width, splashscreen_height, c[0]-splashscreen_width/2, c[1]-splashscreen_height/2, true);
   	dlgSplashScreen.set_file File.dirname(__FILE__) + "/GESTURE/Control/splashscreen.html"
 	
+	dlgSplashScreen.set_full_security=false
+	
 	dlgSplashScreen.min_height = 420
   	dlgSplashScreen.min_width = 660
 	dlgSplashScreen.max_height = 420
@@ -50,14 +53,12 @@ def splashscreen
 	
 	dlgSplashScreen.show
 	
-	#callback to get the statu 
+	#callback to get the video statu 
 	dlgSplashScreen.add_action_callback("SPLASHSCREEN_VID") do |js_wd, message|
-		reply = 'Hi, JavaScript. Thanks for saying, \"' + message + '\"!'
-		script = 'alert( "' + reply + '" ); update(\'30%\');'
-		puts script
-		js_wd.execute_script( script )
+		#1 video ended
+		splashscreen_video=message.to_int
 	end
-	
+
 	#function to update progress bar
    	def update_progress(a)
 		script = 'update(\''+a+'%\');'
@@ -65,13 +66,14 @@ def splashscreen
 		dlgSplashScreen.execute_script( script )
 	end
 	
-	model = Sketchup.active_model
-	view = model.active_view
-	camera = view.camera
-	eye = camera.eye
-	target = camera.target
-	up = camera.up
-	direction = camera.direction	
+	#get Sketchup environment data
+	$model = Sketchup.active_model
+	$view = model.active_view
+	$camera = view.camera
+	$eye = camera.eye
+	$target = camera.target
+	$up = camera.up
+	$direction = camera.direction	
 	
 	#test all component
 	
@@ -83,6 +85,9 @@ def splashscreen
 # 	dlgSplashScreen.close
  	
  	menu
+ 	#if user closes splashscreen???
+ 	dlgSplashScreen.visible?
+ 	
  	
 end
 
@@ -94,7 +99,7 @@ def menu
   	menu_height = 400
 
 	c = Sketchup.active_model.active_view.center
-  	dlgMenu = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", menu_width, menu_height, c[0]-menu_width/2, c[1]-menu_height/2, true);
+  	dlgMenu = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", menu_width, menu_height, c[0]-menu_width/2, c[1]-menu_height/2, true);
   	dlgMenu.set_file File.dirname(__FILE__) + "/GESTURE/Control/menu.html"
 	
 	dlgMenu.show

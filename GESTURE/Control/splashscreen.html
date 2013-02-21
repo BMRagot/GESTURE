@@ -164,10 +164,24 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 	<script type="text/javascript">
 		myVid=document.getElementById("splashscreen");   
-		myVid.addEventListener("timeupdate", function() {
+		
+		if (myVid.addEventListener){
+  			myVid.addEventListener("timeupdate", function() {
+					if (myVid.currentTime >= myVid.duration - 0.01) {
+					callRuby('SPLASHSCREEN_VID','1'); 
+					}}, false);
+		} else if (myVid.attachEvent) {
+  			myVid.attachEvent("ontimeupdate", function() {
+					if (myVid.currentTime >= myVid.duration - 0.01) {
+					callRuby('SPLASHSCREEN_VID','1'); 
+					}}
+			);
+		}
+		
+		/*myVid.addEventListener("timeupdate", function() {
 		if (myVid.currentTime >= myVid.duration - 0.01) {
-			callRuby('SPLASHSCREEN_VID','true'); 
-		}}, false);
+			callRuby('SPLASHSCREEN_VID','1'); 
+		}}, false);*/
 	
 	</script>
 	
