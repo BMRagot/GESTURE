@@ -44,7 +44,6 @@ def splashscreen
   	dlgSplashScreen = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", splashscreen_width, splashscreen_height, c[0]-splashscreen_width/2, c[1]-splashscreen_height/2, true);
   	dlgSplashScreen.set_file File.dirname(__FILE__) + "/GESTURE/Control/splashscreen.html"
 	
-	dlgSplashScreen.set_full_security=false
 	
 	dlgSplashScreen.min_height = 420
   	dlgSplashScreen.min_width = 660
@@ -68,12 +67,12 @@ def splashscreen
 	
 	#get Sketchup environment data
 	$model = Sketchup.active_model
-	$view = model.active_view
-	$camera = view.camera
-	$eye = camera.eye
-	$target = camera.target
-	$up = camera.up
-	$direction = camera.direction	
+	$view = $model.active_view
+	$camera = $view.camera
+	$eye = $camera.eye
+	$target = $camera.target
+	$up = $camera.up
+	$direction = $camera.direction	
 	
 	#test all component
 	
