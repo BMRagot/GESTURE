@@ -21,16 +21,26 @@
 		});
 	</script>
 	
+	
+	<style>
+	
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}
+
+
+	</style>
+	
+	
+	
 	<style>
 		.meter { 
 			height: 20px;  /* Can be anything */
 			position: relative;
-			margin: 60px 0 20px 0; /* Just for demo spacing */
+			margin: 0px 0 0px 0; /* Just for demo spacing */
 			background: #555;
 			-moz-border-radius: 25px;
 			-webkit-border-radius: 25px;
 			border-radius: 25px;
-			padding: 10px;
+			padding: 0px;
 			-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
 			-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
 			box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
@@ -130,19 +140,6 @@
 		    }
 		}
 		
-		.orange > span {
-			background-color: #f1a165;
-			background-image: -moz-linear-gradient(top, #f1a165, #f36d0a);
-			background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f1a165),color-stop(1, #f36d0a));
-			background-image: -webkit-linear-gradient(#f1a165, #f36d0a); 
-		}
-		
-		.red > span {
-			background-color: #f0a3a3;
-			background-image: -moz-linear-gradient(top, #f0a3a3, #f42323);
-			background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f0a3a3),color-stop(1, #f42323));
-			background-image: -webkit-linear-gradient(#f0a3a3, #f42323);
-		}
 		
 		.nostripes > span > span, .nostripes > span:after {
 			-webkit-animation: none;
@@ -159,9 +156,9 @@
 	</script>
 
 </head>
-<body style="background-color:000;">
+<body style="background: #000 ; height:392px; width:660px;">
 
-	<video id="splashscreen" class="video-js vjs-default-skin" height="100%" width="100%"  preload="auto" autoplay data-setup="{}">
+	<video id="splashscreen" class="video-js vjs-default-skin" height="372px" width="660px"  preload="auto" autoplay data-setup="{}">
   		<source type="video/mpg" src="splashscreen.mpg">
 	</video>
 
@@ -169,17 +166,17 @@
 		myVid=document.getElementById("splashscreen");   
 		myVid.addEventListener("timeupdate", function() {
 		if (myVid.currentTime >= myVid.duration - 0.01) {
-			callRuby('splashscreen','true'); 
+			callRuby('SPLASHSCREEN_VID','true'); 
 		}}, false);
 	
 	</script>
 	
 	
 	<div class="meter animate">
-			<span id="progressbar" style="width: 100%"><span></span></span>
+			<span id="progressbar" style="width: 10%"><span></span></span>
 	</div>
 	
-	<input type="button" onclick="update(50)" value="Quitter" class="boutonmauve"/>
+	<input type="button" onclick="update('50%')" value="Quitter" class="boutonmauve"/>
 	
 	<script type="text/javascript">
 	function update(a){

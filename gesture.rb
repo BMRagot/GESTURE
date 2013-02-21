@@ -36,25 +36,34 @@ UI.menu("Plugins").add_item("GESTURE...") {
 def splashscreen
 
 	splashscreen_width = 660
-  	splashscreen_height = 400
+  	splashscreen_height = 420
   	
   	c = Sketchup.active_model.active_view.center
   	
   	dlgSplashScreen = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", splashscreen_width, splashscreen_height, c[0]-splashscreen_width/2, c[1]-splashscreen_height/2, true);
-  	dlgSplashScreen.set_file File.dirname(__FILE__) + "/GESTURE/splashscreen.html"
+  	dlgSplashScreen.set_file File.dirname(__FILE__) + "/GESTURE/Control/splashscreen.html"
 	
-	dlgSplashScreen.min_height = 400
+	dlgSplashScreen.min_height = 420
   	dlgSplashScreen.min_width = 660
-	dlgSplashScreen.max_height = 400
+	dlgSplashScreen.max_height = 420
   	dlgSplashScreen.max_width = 660
 	
 	dlgSplashScreen.show
 	
-	dlgSplashScreen.add_action_callback("splashscreen") {|dialog, params|
-	    ## if (params.to_s.equal){dlgSplashScreen.close}
-	     
-	     ##...
-   	}
+	#callback to get the statu 
+	dlgSplashScreen.add_action_callback("SPLASHSCREEN_VID") do |js_wd, message|
+		reply = 'Hi, JavaScript. Thanks for saying, \"' + message + '\"!'
+		script = 'alert( "' + reply + '" ); update(\'30%\');'
+		puts script
+		js_wd.execute_script( script )
+	end
+	
+	#function to update progress bar
+   	def update_progress(a)
+		script = 'update(\''+a+'%\');'
+		puts script
+		dlgSplashScreen.execute_script( script )
+	end
 	
 	model = Sketchup.active_model
 	view = model.active_view
@@ -71,7 +80,6 @@ def splashscreen
 	#progress bar
 	
  	#transfert result
-# 	pause 20
 # 	dlgSplashScreen.close
  	
  	menu
@@ -87,7 +95,7 @@ def menu
 
 	c = Sketchup.active_model.active_view.center
   	dlgMenu = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", menu_width, menu_height, c[0]-menu_width/2, c[1]-menu_height/2, true);
-  	dlgMenu.set_file File.dirname(__FILE__) + "/GESTURE/menu.html"
+  	dlgMenu.set_file File.dirname(__FILE__) + "/GESTURE/Control/menu.html"
 	
 	dlgMenu.show
 	
@@ -124,17 +132,17 @@ def controlgesture
 	c = Sketchup.active_model.active_view.center
 	
 	dlgRepere = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", repere_width, repere_height, 0, 2*c[1]-repere_height/2, true);
-  	dlgRepere.set_file File.dirname(__FILE__) + "/GESTURE/repere.html"
+  	dlgRepere.set_file File.dirname(__FILE__) + "/GESTURE/Control/repere.html"
 		
 	dlgRepere.show
 
 	dlgControl = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", control_width, control_height, 2*c[0], 2*c[1], true);
-  	dlgControl.set_file File.dirname(__FILE__) + "/GESTURE/control.html"
+  	dlgControl.set_file File.dirname(__FILE__) + "/GESTURE/Control/control.html"
 		
 	dlgControl.show	
 	
 	dlgToolbar = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", toolbar_width, toolbar_height, 2*c[0], 0, true);
-  	dlgToolbar.set_file File.dirname(__FILE__) + "/GESTURE/toolbar.html"
+  	dlgToolbar.set_file File.dirname(__FILE__) + "/GESTURE/Control/toolbar.html"
 		
 	dlgToolbar.show
 
