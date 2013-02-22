@@ -97,7 +97,7 @@ def splashscreen
  	
  	#if user closes splashscreen???
  	dlgSplashScreen.visible?
- 	UI.messagebox("Your model has " + number_materials.to_s + " materials.")
+ 	UI.messagebox("Your model has " + $number_materials.to_s + " materials.")
 
  	# test progressbarscore==100%
 #	dlgSplashScreen.close
