@@ -1,5 +1,16 @@
+<!DOCTYPE html>
+
 <html>
 <head>
+	
+	<meta charset='UTF-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" >
+	
+	<link rel="stylesheet" href="gesture.min.css" />
+  	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" /> 
+	
+	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="jquery.mobile-1.3.0.min.js"></script>
 	
 	<script type="text/javascript">
 		function callRuby(callbackName, params) {
@@ -10,8 +21,8 @@
 
 	<style type="text/css">	
 	
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}
-
+/*html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}
+*/
 		#footer {
 			position:absolute;
 			left:0;
@@ -71,84 +82,82 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 		}
 				
 		.boutonmauve {
-			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #69458c), color-stop(1, #49378c) );
-			background:-moz-linear-gradient( center top, #69458c 5%, #49378c 100% );
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#69458c', endColorstr='#49378c');
 			background-color:#69458c;
-			-moz-border-radius:6px;
-			-webkit-border-radius:6px;
-			border-radius:6px;
-			border:1px solid #ffffff;
 			display:inline-block;
 			color:#bfbfbf;
-			font-family:arial;
-			font-size:15px;
-			font-weight:bold;
-			padding:6px 24px;
-			text-decoration:none;
+			
 		}.boutonmauve:hover {
-			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #49378c), color-stop(1, #69458c) );
-			background:-moz-linear-gradient( center top, #49378c 5%, #69458c 100% );
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#49378c', endColorstr='#69458c');
 			background-color:#49378c;
 		}.boutonmauve:active {
 			position:relative;
 			top:1px;
 		}
 				
-		
-		#action{
-			position:absolute;
-			left:0;
-			right:0;
-			bottom:50;
-		}
-		
-		
 	</style>
 	
 </head>
 <body>
+<div data-role="page" data-theme="a" id="demo-page" class="my-page" data-url="demo-page">
 	<div id="header">
 		<img src="header.jpg" >		
 	</div>
 	
-	<div id="statut">
-		<hr align="center">
 
-		<h1 align="center">Statut</h1>
-			
-		<table border="0" bordercolor="#000" style="background-color:#FFFFFF" width="100%" cellpadding="3" cellspacing="5">
-			<tr>
-				<td>Kinect</td>
-				<td>OK/NOK?</td>
-				<td>Library</td>
-				<td>??</td>
-			</tr>
-			<tr>
-				<td>XXX</td>
-				<td>XXX</td>
-				<td>XXX</td>
-				<td>XXX</td>
-			</tr>
-		</table>
+<div id="statut" data-role="collapsible" data-collapsed ="false" data-theme="a" data-content-theme="a">
+	<h2><center>Statuts</center></h2>
 
-		<hr align="center">
-
+	<div class="ui-grid-a" data-theme="a">
+	    <div class="ui-block-a" style="padding:5px">
+		    <ul data-role="listview" data-count-theme="a" data-inset="true">
+				<li data-role="list-divider" data-theme="a">Resources</li>
+			    <li>Kinect<span class="ui-li-count" id="Kinect">OK</span></li>
+			    <li>Librairie<span class="ui-li-count">0</span></li>
+			    <li>Drafts <span class="ui-li-count">4</span></li>
+			    <li>Sent <span class="ui-li-count">328</span></li>
+			    <li>Trash <span class="ui-li-count">62</span></li>
+			</ul>
+		</div>
+	    <div class="ui-block-b" style="padding:5px">
+		    <ul data-role="listview" data-count-theme="a" data-inset="true">
+				<li data-role="list-divider" data-theme="a">SketchUp</li>
+			    <li>Inbox <span class="ui-li-count">12</span></li>
+			    <li>Outbox <span class="ui-li-count">0</span></li>
+			    <li>Drafts <span class="ui-li-count">4</span></li>
+			    <li>Sent <span class="ui-li-count">328</span></li>
+			    <li>Trash <span class="ui-li-count">62</span></li>
+			</ul>
+		</div>
 	</div>
+</div>
+
+	 retour erreurs
+
+
 	
-	<div width="100%" id="action">
-	<table width="100%" align="center">
-		<tr>
-			<td align="center"><input type="button" onclick="callRuby('GESTURE_QUIT','')" value="Quitter" class="boutonmauve"/></td>
-			<td align="center"><input type="button" onclick="callRuby('GESTURE_apprentissage','')" value="Mode Apprentissage" class="boutonvert"/></td>
-			<td align="center"><input type="button" onclick="callRuby('GESTURE_START','')" value="D&eacute;marrer" class="boutonvert"/></td>
-		</tr>
-	</table>
+	
+	
+	<fieldset  class="ui-grid-b">
+    	<div class="ui-block-a">
+             <button type="submit" data-theme="a" onclick="callRuby('GESTURE_QUIT','')" >Quitter</button>
+        </div>
+        <div class="ui-block-b">
+	        <button type="submit" data-theme="b" onclick="callRuby('GESTURE_apprentissage','')">Mode Apprentissage</button>
+		</div>
+		<div class="ui-block-c">
+			<button type="submit" data-theme="c" onclick="callRuby('GESTURE_START','')">D&eacute;marrer</button>
+		</div>
+    </fieldset>
+	
+	
+	
+	
+	
+	
+	
+	<!--<div id="footer">-->
+	 <div data-role="footer" data-theme="a" data-position="fixed">
+		<h3>GESTURE &copy; Copyright 2013</h3>
 	</div>
-	
-	<div id="footer">
-GESTURE &copy; Copyright 2013
 	</div>
 
 </body>
