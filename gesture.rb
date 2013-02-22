@@ -144,17 +144,17 @@ def menu
 	
 	$dlgMenu.add_action_callback("GESTURE_QUIT") {|dialog, params|
 	     UI.messagebox("You quit GESTURE " + params.to_s)
-	     dlgMenu.close
+	     $dlgMenu.close
    	}
    	
    	$dlgMenu.add_action_callback("GESTURE_START") {|dialog, params|
-	     dlgMenu.close
+	     $dlgMenu.close
 	     controlgesture
 	     ##...
    	}
    	
    	$dlgMenu.add_action_callback("GESTURE_apprentissage") {|dialog, params|
-	     dlgMenu.close
+	     $dlgMenu.close
 	     #..
    	}
    	
