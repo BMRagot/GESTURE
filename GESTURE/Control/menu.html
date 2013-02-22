@@ -6,8 +6,8 @@
 	<meta charset='UTF-8'>
 	<meta http-equiv="X-UA-Compatible" content="IE=9" >
 	
-	<link rel="stylesheet" href="gesture.min.css" />
-  	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" /> 
+	<link rel="stylesheet" href="gesture.css" />
+  	<link rel="stylesheet" href="jquery.mobile.structure-1.3.0.css" /> 
 	
 	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="jquery.mobile-1.3.0.min.js"></script>
@@ -24,33 +24,20 @@
 /*html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}
 */
 		#footer {
-			position:absolute;
-			left:0;
-			right:0;
-			bottom:0;
-	
 			width:auto;
+			height: 15px;
 			display:block;
 			overflow:hidden;
-			margin-right:10px;
-			border-radius:5px;
 	
-			/* font */
-			color:#1a1a1a;
+	
 			line-height:1.8;
 			font-size:0.5em;
-			font-weight:normal;
-			text-transform:none;
-			text-decoration:none;
-			font-family:'Chalkduster','Times New Roman',serif;
+		
 	
 			background-color:#F0F2EB;
-			overflow:hidden;
-			margin-right:10px;
-			margin-left:10px;
+			
 			border-radius:5px;
 			padding-top:0px;
-			padding-left:10px;
 			
 			text-align:center;	
 		}		
@@ -107,7 +94,7 @@
 	<h2><center>Statuts</center></h2>
 
 	<div class="ui-grid-a" data-theme="a">
-	    <div class="ui-block-a" style="padding:5px">
+	    <div class="ui-block-a" style="padding:3px">
 		    <ul data-role="listview" data-count-theme="a" data-inset="true">
 				<li data-role="list-divider" data-theme="a">Resources</li>
 			    <li>Kinect<span class="ui-li-count" id="Kinect">OK</span></li>
@@ -117,7 +104,7 @@
 			    <li>Trash <span class="ui-li-count">62</span></li>
 			</ul>
 		</div>
-	    <div class="ui-block-b" style="padding:5px">
+	    <div class="ui-block-b" style="padding:3px">
 		    <ul data-role="listview" data-count-theme="a" data-inset="true">
 				<li data-role="list-divider" data-theme="a">SketchUp</li>
 			    <li>Inbox <span class="ui-li-count">12</span></li>
@@ -154,8 +141,8 @@
 	
 	
 	
-	<!--<div id="footer">-->
-	 <div data-role="footer" data-theme="a" data-position="fixed">
+	<!--<div >-->
+	 <div id="footer" data-role="footer" data-theme="a" data-position="fixed">
 		<h3>GESTURE &copy; Copyright 2013</h3>
 	</div>
 	</div>

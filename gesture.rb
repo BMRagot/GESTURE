@@ -18,7 +18,7 @@
 # First we pull in the standard API hooks.
 require 'sketchup.rb'
 
-
+##DEV to delete 
 # Show the Ruby Console at startup so we can
 # see any programming errors we may make.
 Sketchup.send_action "showRubyPanel:"
@@ -26,7 +26,7 @@ Sketchup.send_action "showRubyPanel:"
 # Add a menu item to launch GESTURE plugin.
 UI.menu("Plugins").add_item("GESTURE...") {
   
-  #call function
+  #call Splash Screen function to load resources
   splashscreen
   
 }
@@ -73,6 +73,9 @@ def splashscreen
 	
 	#get Sketchup environment data
 	$model = Sketchup.active_model
+	$materials = $model.materials
+	$number_materials = $materials.length
+
 	$view = $model.active_view
 	$camera = $view.camera
 	$eye = $camera.eye
@@ -94,7 +97,8 @@ def splashscreen
  	
  	#if user closes splashscreen???
  	dlgSplashScreen.visible?
- 	
+ 	UI.messagebox("Your model has " + number_materials.to_s + " materials.")
+
  	# test progressbarscore==100%
 #	dlgSplashScreen.close
  	 menu
@@ -110,14 +114,20 @@ end
 #############################################################
 def menu
 
-	menu_width = 600
-  	menu_height = 400
+	menu_width = 660
+  	menu_height = 500
 
 	c = Sketchup.active_model.active_view.center
   	dlgMenu = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", menu_width, menu_height, c[0]-menu_width/2, c[1]-menu_height/2, true);
   	dlgMenu.set_file File.dirname(__FILE__) + "/GESTURE/Control/menu.html"
 	
 	dlgMenu.show
+	
+	dlgMenu.min_height = 500
+  	dlgMenu.min_width = 660
+	dlgMenu.max_height = 500
+  	dlgMenu.max_width = 660
+	
 	
 	dlgMenu.add_action_callback("GESTURE_QUIT") {|dialog, params|
 	     UI.messagebox("You quit GESTURE " + params.to_s)
