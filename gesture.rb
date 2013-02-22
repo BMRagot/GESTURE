@@ -36,6 +36,8 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #############################################################
 def splashscreen
 	
+	progressbar = 0
+	
 	#create WebDialog UI
 	splashscreen_width = 660
   	splashscreen_height = 420
@@ -78,18 +80,27 @@ def splashscreen
 	$up = $camera.up
 	$direction = $camera.direction	
 	
+	# create TCPServer
+	
+	# load C++ module
+	
 	#test all component
 	
 	#save result
 	
-	#progress bar
 	
  	#transfert result
-# 	dlgSplashScreen.close
  	
- 	menu
+ 	
  	#if user closes splashscreen???
  	dlgSplashScreen.visible?
+ 	
+ 	# test progressbarscore==100%
+#	dlgSplashScreen.close
+ 	 menu
+ 	
+ 	
+ 	
  	
  	
 end

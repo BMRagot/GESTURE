@@ -160,7 +160,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 </head>
 <body style="background: #000 ; height:392px; width:660px;">
 
-	<video id="splashscreen" class="video-js vjs-default-skin" height="372px" width="660px"  preload="auto" autoplay data-setup="{}">
+	<video id="splashscreen" class="video-js vjs-default-skin" height="372px" width="660px"  preload="auto" autoplay="true" data-setup="{}">
   		<source type="video/mpg" src="splashscreen.mp4">
 	</video>
 
@@ -198,11 +198,17 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	<script type="text/javascript">
 	function update(a){
 		progressbar=document.getElementById("progressbar"); 
-		/*progressbar.style.width=a;*/
+		
+		if( navigator.appName == "Microsoft Internet Explorer"){	
+			progressbar.style.setAttribute("cssText","width:30%;");
+		}else{
+			progressbar.style.width=a;
+		}
 		/*if (document.all) { */
-			progressbar.style.setAttribute("cssText","width:30%;");}
 		/*}*/
+	}
 	</script>
+	
 	
 </body>
 
