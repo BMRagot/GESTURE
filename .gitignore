@@ -2,4 +2,5 @@
 jsCameraTool.rb
 AUTOLOADER_Dir/
 autoloader_fr.rb
-.DS_Store
+GESTURE/.DS_Store
+GESTURE/Control/.DS_Store
