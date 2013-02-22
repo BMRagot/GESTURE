@@ -138,7 +138,8 @@ def menu
   	$dlgMenu.min_width = 600
 	$dlgMenu.max_height = 500
   	$dlgMenu.max_width = 600
-	
+  	 	
+   	#Show Dialog
 	$dlgMenu.show
 
 	
@@ -168,9 +169,7 @@ def menu
    	
    	
    	
-   	
-   	#Show Dialog
-   
+  
 	
 
 end
