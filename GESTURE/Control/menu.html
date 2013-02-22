@@ -18,21 +18,28 @@
 				window.location.href = fake_url;
 			}
 	</script>
-
-	<style type="text/css">	
 	
-/*html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}
-*/
+	
+	<script type="text/javascript">
+		function add_statuts(a,b){
+			document.getElementById(a).innerHTML = b; 
+		}
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			callRuby('MENU_READY','');
+		});
+	</script>
+	<style type="text/css">	
 		#footer {
 			width:auto;
 			height: 15px;
 			display:block;
 			overflow:hidden;
 	
-	
 			line-height:1.8;
-			font-size:0.5em;
-		
+			font-size:0.2em;	
 	
 			background-color:#F0F2EB;
 			
@@ -40,46 +47,40 @@
 			padding-top:0px;
 			
 			text-align:center;	
+		}
+		
+		#statut{
+			padding-top: 2px;
+			margin-top: 0px;
+			margin: 0px;
+			padding:0px;
 		}		
-								
-		.boutonvert {
-			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5dc02f), color-stop(1, #32a62e) );
-			background:-moz-linear-gradient( center top, #5dc02f 5%, #32a62e 100% );
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5dc02f', endColorstr='#32a62e');
-			background-color:#5dc02f;
-			-moz-border-radius:6px;
-			-webkit-border-radius:6px;
-			border-radius:6px;
-			border:1px solid #ffffff;
-			display:inline-block;
-			color:#49378c;
-			font-family:arial;
-			font-size:15px;
-			font-weight:bold;
-			padding:6px 24px;
-			text-decoration:none;
-		}.boutonvert:hover {
-			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #32a62e), color-stop(1, #5dc02f) );
-			background:-moz-linear-gradient( center top, #32a62e 5%, #5dc02f 100% );
-			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#32a62e', endColorstr='#5dc02f');
-			background-color:#32a62e;
-		}.boutonvert:active {
-			position:relative;
-			top:1px;
+		#result{
+			padding-top: 2px;
+			padding: 0px
+			margin-top: 0px;
+			margin: 0px;
 		}
-				
-		.boutonmauve {
-			background-color:#69458c;
-			display:inline-block;
-			color:#bfbfbf;
-			
-		}.boutonmauve:hover {
-			background-color:#49378c;
-		}.boutonmauve:active {
-			position:relative;
-			top:1px;
+		.ui-collapsible li{
+			height: 12px;
+			font-size: 0.8em;
+			padding-top: 0px;
+			line-height:0.9;
+			margin: 0px;
 		}
-				
+		.ui-collapsible-content ui-body-a{
+		
+					padding:0px;
+
+		}
+		#error li{
+			text-align: center;
+			margin: 3px;
+			padding: 4px;
+			font-size: 0.6em;
+			line-height:1.8em;
+
+		}												
 	</style>
 	
 </head>
@@ -89,63 +90,53 @@
 		<img src="header.jpg" >		
 	</div>
 	
-
-<div id="statut" data-role="collapsible" data-collapsed ="false" data-theme="a" data-content-theme="a">
-	<h2><center>Statuts</center></h2>
-
-	<div class="ui-grid-a" data-theme="a">
-	    <div class="ui-block-a" style="padding:3px">
-		    <ul data-role="listview" data-count-theme="a" data-inset="true">
-				<li data-role="list-divider" data-theme="a">Resources</li>
-			    <li>Kinect<span class="ui-li-count" id="Kinect">OK</span></li>
-			    <li>Librairie<span class="ui-li-count">0</span></li>
-			    <li>Drafts <span class="ui-li-count">4</span></li>
-			    <li>Sent <span class="ui-li-count">328</span></li>
-			    <li>Trash <span class="ui-li-count">62</span></li>
-			</ul>
-		</div>
-	    <div class="ui-block-b" style="padding:3px">
-		    <ul data-role="listview" data-count-theme="a" data-inset="true">
-				<li data-role="list-divider" data-theme="a">SketchUp</li>
-			    <li>Inbox <span class="ui-li-count">12</span></li>
-			    <li>Outbox <span class="ui-li-count">0</span></li>
-			    <li>Drafts <span class="ui-li-count">4</span></li>
-			    <li>Sent <span class="ui-li-count">328</span></li>
-			    <li>Trash <span class="ui-li-count">62</span></li>
-			</ul>
+	<div id="statut" data-role="collapsible" data-collapsed ="false" data-theme="a" data-content-theme="a">
+		<h2><center>Statut</center></h2>
+	
+		<div id="result" class="ui-grid-a" data-theme="a">
+		    <div class="ui-block-a" style="padding:3px">
+			    <ul data-role="listview" data-count-theme="c" data-inset="true">
+					<li data-role="list-divider" data-theme="a"><center>Ressources</center></li>
+				    <li>Kinect<span class="ui-li-count" id="Kinect">OK</span></li>
+				    <li>Librairie<span class="ui-li-count">0</span></li>
+				    <li>Drafts <span class="ui-li-count">4</span></li>
+				    <li>Sent <span class="ui-li-count">328</span></li>
+				    <li>Trash <span class="ui-li-count">62</span></li>
+				</ul>
+			</div>
+		    <div class="ui-block-b" style="padding:3px">
+			    <ul data-role="listview" data-count-theme="a" data-inset="true">
+					<li data-role="list-divider" data-theme="a"><center>SketchUp</center></li>
+				    <li>Inbox <span class="ui-li-count">12</span></li>
+				    <li>Outbox <span class="ui-li-count">0</span></li>
+				    <li>Drafts <span class="ui-li-count">4</span></li>
+				    <li>Sent <span class="ui-li-count">328</span></li>
+				    <li>Trash <span class="ui-li-count">62</span></li>
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
 
-	 retour erreurs
-
-
-	
-	
+	<ul id="error" data-role="listview" data-theme="a" data-inset="true">
+	    <li>Syst&egrave;me Op&eacute;rationnel</li>
+	</ul>
 	
 	<fieldset  class="ui-grid-b">
     	<div class="ui-block-a">
              <button type="submit" data-theme="a" onclick="callRuby('GESTURE_QUIT','')" >Quitter</button>
         </div>
         <div class="ui-block-b">
-	        <button type="submit" data-theme="b" onclick="callRuby('GESTURE_apprentissage','')">Mode Apprentissage</button>
+	        <button type="submit" data-theme="b" onclick="callRuby('GESTURE_apprentissage','')">Didacticiel</button>
 		</div>
 		<div class="ui-block-c">
 			<button type="submit" data-theme="c" onclick="callRuby('GESTURE_START','')">D&eacute;marrer</button>
 		</div>
     </fieldset>
 	
-	
-	
-	
-	
-	
-	
-	<!--<div >-->
-	 <div id="footer" data-role="footer" data-theme="a" data-position="fixed">
-		<h3>GESTURE &copy; Copyright 2013</h3>
+	<div id="footer" data-role="footer" data-theme="a" data-position="fixed">
+		GESTURE &copy; Copyright 2013
 	</div>
-	</div>
+</div>
 
 </body>
 </html>

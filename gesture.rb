@@ -36,7 +36,7 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #############################################################
 def splashscreen
 	
-	progressbar = 0
+	progressbar_score = 0
 	
 	#create WebDialog UI
 	splashscreen_width = 660
@@ -44,34 +44,30 @@ def splashscreen
   	
   	c = Sketchup.active_model.active_view.center
   	
-  	dlgSplashScreen = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", splashscreen_width, splashscreen_height, c[0]-splashscreen_width/2, c[1]-splashscreen_height/2, true);
-  	dlgSplashScreen.set_file File.dirname(__FILE__) + "/GESTURE/Control/splashscreen.html"
+  	$dlgSplashScreen = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", splashscreen_width, splashscreen_height, c[0]-splashscreen_width/2, c[1]-splashscreen_height/2, true);
+  	$dlgSplashScreen.set_file File.dirname(__FILE__) + "/GESTURE/Control/splashscreen.html"
 	
 	
-	dlgSplashScreen.min_height = 420
-  	dlgSplashScreen.min_width = 660
-	dlgSplashScreen.max_height = 420
-  	dlgSplashScreen.max_width = 660
+	$dlgSplashScreen.min_height = 420
+  	$dlgSplashScreen.min_width = 660
+	$dlgSplashScreen.max_height = 420
+  	$dlgSplashScreen.max_width = 660
 	
-	dlgSplashScreen.show
+	$dlgSplashScreen.show
 	
-	#callback to get the video statu 
-	dlgSplashScreen.add_action_callback("SPLASHSCREEN_VID") do |js_wd, message|
+	#callback to get the video status
+	$dlgSplashScreen.add_action_callback("SPLASHSCREEN_VID") do |js_wd, message|
 		#1 video ended
 		#useless
-		splashscreen_video=message.to_int
+		#splashscreen_video=message.to_i
 		# just +1 to update
-		
+		progressbar_score = progressbar_score + 100
+		update_progress(progressbar_score)
 	end
 
-	#function to update progress bar
-   	def update_progress(a)
-		script = 'update(\''+a+'%\');'
-		puts script
-		dlgSplashScreen.execute_script( script )
-	end
+	# Test Kinect Connection
 	
-	#get Sketchup environment data
+	# Get Sketchup environment data
 	$model = Sketchup.active_model
 	$materials = $model.materials
 	$number_materials = $materials.length
@@ -83,73 +79,112 @@ def splashscreen
 	$up = $camera.up
 	$direction = $camera.direction	
 	
-	# create TCPServer
+	# Create TCPServer
 	
-	# load C++ module
+	# Load C++ module
 	
 	#test all component
 	
 	#save result
+	#log file??
 	
 	
  	#transfert result
  	
  	
  	#if user closes splashscreen???
- 	dlgSplashScreen.visible?
+ 	$dlgSplashScreen.visible?
  	UI.messagebox("Your model has " + $number_materials.to_s + " materials.")
 
  	# test progressbarscore==100%
 #	dlgSplashScreen.close
- 	 menu
+ 	# menu
  	
  	
  	
  	
  	
 end
+
+
+#function to update progress bar
+   	def update_progress(a)
+		script = 'update(\''+a.to_s+'%\');'
+		puts script
+		$dlgSplashScreen.execute_script( script )
+		
+		if (a==100)
+			$dlgSplashScreen.close
+			menu
+		end
+	end
+
 
 #############################################################
 #						Menu								#
 #############################################################
 def menu
 
-	menu_width = 660
+	#create WebDialog UI menu
+	menu_width = 600
   	menu_height = 500
 
 	c = Sketchup.active_model.active_view.center
-  	dlgMenu = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", menu_width, menu_height, c[0]-menu_width/2, c[1]-menu_height/2, true);
-  	dlgMenu.set_file File.dirname(__FILE__) + "/GESTURE/Control/menu.html"
-	
-	dlgMenu.show
-	
-	dlgMenu.min_height = 500
-  	dlgMenu.min_width = 660
-	dlgMenu.max_height = 500
-  	dlgMenu.max_width = 660
+  	$dlgMenu = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", menu_width, menu_height, c[0]-menu_width/2, c[1]-menu_height/2, true);
+  	$dlgMenu.set_file File.dirname(__FILE__) + "/GESTURE/Control/menu.html"
 	
 	
-	dlgMenu.add_action_callback("GESTURE_QUIT") {|dialog, params|
+	$dlgMenu.min_height = 500
+  	$dlgMenu.min_width = 600
+	$dlgMenu.max_height = 500
+  	$dlgMenu.max_width = 600
+	
+	$dlgMenu.show
+
+	
+	$dlgMenu.add_action_callback("GESTURE_QUIT") {|dialog, params|
 	     UI.messagebox("You quit GESTURE " + params.to_s)
 	     dlgMenu.close
    	}
    	
-   	dlgMenu.add_action_callback("GESTURE_START") {|dialog, params|
+   	$dlgMenu.add_action_callback("GESTURE_START") {|dialog, params|
 	     dlgMenu.close
 	     controlgesture
 	     ##...
    	}
    	
-   	dlgMenu.add_action_callback("GESTURE_apprentissage") {|dialog, params|
+   	$dlgMenu.add_action_callback("GESTURE_apprentissage") {|dialog, params|
 	     dlgMenu.close
 	     #..
    	}
    	
-   	# Get all Status
+   	$dlgMenu.add_action_callback("MENU_READY") {|dialog, params|
+   		# Get all Status
+   		add_status("Kinect","NOK")
+   		
+   	}
+
    	
    	
+   	
+   	
+   	
+   	#Show Dialog
+   
+	
 
 end
+
+def add_status(a,b)
+		script1 = 'add_statuts(\''+a+'\',\''+b+'\');'
+#				document.getElementById("Kinect").textContent=\'4\';'
+		puts script1
+		$dlgMenu.execute_script( script1 )   	
+end
+
+
+
+
 
 #############################################################
 #						Control 							#
