@@ -1,9 +1,12 @@
 #include <iostream>
 
+
 using namespace std;
 
-int main()
+int fmain()
 {
+    int z;
     cout << "Hello world!" << endl;
+
     return 0;
 }
