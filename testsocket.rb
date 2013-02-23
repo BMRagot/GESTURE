@@ -1,6 +1,8 @@
 
 require 'GESTURE/Control/socket.so'
 
+#require 'socket'
+
 # Add a menu item to launch GESTURE plugin.
 UI.menu("Plugins").add_item("socket...") {
   
@@ -46,3 +48,13 @@ while line = s.gets   # Read lines from the socket
 end
 s.close  
 end
+
+
+
+
+#require 'socket'
+#client = TCPSocket.open('localhost', 'finger')
+#client.send("oracle\n", 0)    # 0 means standard packet
+#puts client.readlines
+#client.close
+
