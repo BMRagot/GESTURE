@@ -31,6 +31,24 @@ UI.menu("Plugins").add_item("GESTURE...") {
   
 }
 
+
+
+
+#############################################################
+#						TODO								#
+#############################################################
+
+#Demande d'enrgistrement avant de lancer le plugins?
+#DEscription fichier 
+#entete fichier html
+#recherche pour ejecter la webdialog
+#creer fonction de log
+#code error
+#test du teuber
+# nom de fichier complet lors du statut
+#si statu NOK prevoir griser btouton d'action
+#rajouter les tips sur les status?
+
 #############################################################
 #						Splash Screen						#
 #############################################################
@@ -54,6 +72,8 @@ def splashscreen
   	$dlgSplashScreen.max_width = 660
 	
 	$dlgSplashScreen.show
+	#splashscreen stucks on the top
+	$dlgSplashScreen.show_modal
 	
 	#callback to get the video status
 	$dlgSplashScreen.add_action_callback("SPLASHSCREEN_VID") do |js_wd, message|
@@ -68,10 +88,13 @@ def splashscreen
 	# Test Kinect Connection
 	
 	# Get Sketchup environment data
+	$SUversion = Sketchup.version
 	$model = Sketchup.active_model
+	$titlemodel = $model.title
 	$materials = $model.materials
-	$number_materials = $materials.length
-
+	$objects = $model.active_entities
+	$number_obj = $model.active_entities.length
+	
 	$view = $model.active_view
 	$camera = $view.camera
 	$eye = $camera.eye
@@ -93,8 +116,7 @@ def splashscreen
  	
  	
  	#if user closes splashscreen???
- 	$dlgSplashScreen.visible?
- 	UI.messagebox("Your model has " + $number_materials.to_s + " materials.")
+ 	puts $dlgSplashScreen.visible?
 
  	# test progressbarscore==100%
 #	dlgSplashScreen.close
@@ -139,13 +161,16 @@ def menu
 	$dlgMenu.max_height = 500
   	$dlgMenu.max_width = 600
   	 	
-   	#Show Dialog
-	$dlgMenu.show
+   	#Show Dialog on modal mode
+	$dlgMenu.show_modal
 
 	
 	$dlgMenu.add_action_callback("GESTURE_QUIT") {|dialog, params|
-	     UI.messagebox("You quit GESTURE " + params.to_s)
-	     $dlgMenu.close
+	    result = UI.messagebox("You quit GESTURE "), MB_OKCANCEL
+	    if result==1
+	     	$dlgMenu.close
+	     	#tuer le plugins????? TCP C++ y touti
+	    end
    	}
    	
    	$dlgMenu.add_action_callback("GESTURE_START") {|dialog, params|
@@ -163,6 +188,11 @@ def menu
    		# Get all Status
    		add_status("Kinect","NOK")
    		
+   		
+   		add_status("version", $SUversion.to_f.to_s)
+   		add_status("nomenv", $titlemodel.to_s)
+   		add_status("nbrobj", $number_obj.to_s)
+
    	}
 
    	
