@@ -6,16 +6,8 @@
 
 	<meta charset='UTF-8'>
 	<meta http-equiv="X-UA-Compatible" content="IE=9" >
-	
-	<link href="video-js.css" rel="stylesheet">
-	<script src="video.js"></script>
-	
-	
-	<script>
-    _V_.options.flash.swf = "video-js.swf";
-  </script>
-	
-	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+		
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 
 	
 	<script>
@@ -168,10 +160,18 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 </head>
 <body style="background: #000 ;" >
 <!-- height:392px; width:660px;" -->
-	<video id="splashscreen" class="video-js vjs-default-skin" height="372px" width="660px" controls preload="auto" autoplay="autoplay" data-setup="{}">
+	<!--<video id="splashscreen" class="video-js vjs-default-skin" height="372px" width="660px" controls preload="auto" autoplay="autoplay" data-setup="{}">
   		<source type='video/mpg' src="splashscreen.mpg">
+	</video>-->
+
+	
+	<video id="splashscreen" autoplay="autoplay" width="660" height="372">
+		<source src="video/splashscreen.mp4" type="video/mp4" />
+		<img alt="SplashScreen" src="#" width="660" height="372" title="No video playback capabilities, please download the video below" />
 	</video>
 
+	
+	
 
 	<script type="text/javascript">
 		myVid=document.getElementById("splashscreen");   

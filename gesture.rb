@@ -37,9 +37,17 @@ Sketchup.open_file 'C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\Test
 # Add a menu item to launch GESTURE plugin.
 UI.menu("Plugins").add_item("GESTURE...") {
   
-  #call Splash Screen function to load resources
-  splashscreen
   
+   @model=Sketchup.active_model
+        path=@model.path.tr("\\", "/")
+        if not path or path==""
+            UI.messagebox("OBJExporter:\n\nEnregistrez le fichier SKP avant de l'exporter en OBJ\n")
+            return nil
+        else
+			#call Splash Screen function to load resources
+			splashscreen
+		end#if
+ 
 }
 
 
@@ -50,18 +58,20 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #						TODO								#
 #############################################################
 
-#Demande d'enrgistrement avant de lancer le plugins?
-#DEscription fichier 
-#entete fichier html
-#recherche pour ejecter la webdialog
-#creer fonction de log
-#code error
-#test du teuber
-# nom de fichier complet lors du statut
-#si statu NOK prevoir griser btouton d'action
-#rajouter les tips sur les status?
-#IMPORTANT differencier le code selon macOS ou microshiotte windaube
-#ranger file 
+#		#Demande d'enrgistrement avant de lancer le plugins?
+#		#DEscription fichier 
+#		#entete fichier html
+#		#recherche pour ejecter la webdialog
+#DONE	#creer fonction de log
+#		#code error
+#		#test du teuber
+#DONE	# nom de fichier complet lors du statut
+#		#si statu NOK prevoir griser btouton d'action
+#		#rajouter les tips sur les status?
+#		#IMPORTANT differencier le code selon macOS ou microshiotte windaube
+#DONE	#ranger file 
+#		#splashscreen image alternative
+#		#regler taille fenetre
 
 #############################################################
 #						Splash Screen						#
@@ -134,11 +144,7 @@ def splashscreen
 
  	# test progressbarscore==100%
 #	dlgSplashScreen.close
- 	 menu
- 	
- 	
- 	
- 	
+ #	 menu
  	
 end
 
@@ -205,7 +211,7 @@ def menu
    		
    		
    		add_status("version", $SUversion.to_f.to_s)
-   		add_status("nomenv", $titlemodel.to_s)
+   		add_status("nomenv", $titlemodel.to_s + ".skp")
    		add_status("nbrobj", $number_obj.to_s)
 		
 		
@@ -264,4 +270,35 @@ def controlgesture
 
 
 end
+
+
+
+
+#############################################################
+#						LOG Function						#
+#############################################################
+def log(opt,data)
+  $log_path="C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/log"
+  if opt==1
+	#create new lo file
+	$log_name = "logesture_" + Time.now.day.to_s + Time.now.month.to_s + Time.now.year.to_s + Time.now.to_i.to_s + ".txt"
+	$log_file = File.open($log_path + '/' + $log_name,'a+') 
+	#add header
+	$log_file.puts("##########################################################################################" )
+	$log_file.puts("				GESTURE Plugins ")
+	$log_file.puts("					Log File")
+	$log_file.puts("		Plugin started :" + Time.now.to_s)
+	$log_file.puts("						Gesture 2013 Copyright")
+	$log_file.puts("##########################################################################################" )
+	$log_file.close
+  elsif opt==2
+	#write data into log file
+	$log_file = File.open($log_path + '/' + $log_name,'a+') 
+	$log_file.puts(data.to_s )
+	$log_file.close
+  elsif opt==3
+	#close log file
+	
+  end
+end 
 
