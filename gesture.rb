@@ -295,10 +295,7 @@ def log(opt,data)
 	#write data into log file
 	$log_file = File.open($log_path + '/' + $log_name,'a+') 
 	$log_file.puts(data.to_s )
-	$log_file.close
-  elsif opt==3
-	#close log file
-	
+	$log_file.close	
   end
 end 
 
