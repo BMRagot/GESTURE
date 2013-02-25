@@ -18,10 +18,21 @@
 # First we pull in the standard API hooks.
 require 'sketchup.rb'
 
-##DEV to delete 
+#############################################################
+#					DEVELOPMENT								#
+#############################################################
 # Show the Ruby Console at startup so we can
 # see any programming errors we may make.
 Sketchup.send_action "showRubyPanel:"
+
+#open Test.skp file
+Sketchup.open_file 'C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\Test.skp'
+
+
+#############################################################
+#						END DELETE 							#
+#############################################################
+
 
 # Add a menu item to launch GESTURE plugin.
 UI.menu("Plugins").add_item("GESTURE...") {
@@ -30,6 +41,7 @@ UI.menu("Plugins").add_item("GESTURE...") {
   splashscreen
   
 }
+
 
 
 
@@ -48,6 +60,8 @@ UI.menu("Plugins").add_item("GESTURE...") {
 # nom de fichier complet lors du statut
 #si statu NOK prevoir griser btouton d'action
 #rajouter les tips sur les status?
+#IMPORTANT differencier le code selon macOS ou microshiotte windaube
+#ranger file 
 
 #############################################################
 #						Splash Screen						#
@@ -120,7 +134,7 @@ def splashscreen
 
  	# test progressbarscore==100%
 #	dlgSplashScreen.close
- 	# menu
+ 	 menu
  	
  	
  	
@@ -148,25 +162,26 @@ end
 def menu
 
 	#create WebDialog UI menu
-	menu_width = 600
-  	menu_height = 500
+	menu_width = 617  #600
+  	menu_height = 525  #500
 
 	c = Sketchup.active_model.active_view.center
   	$dlgMenu = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", menu_width, menu_height, c[0]-menu_width/2, c[1]-menu_height/2, true);
   	$dlgMenu.set_file File.dirname(__FILE__) + "/GESTURE/Control/menu.html"
 	
 	
-	$dlgMenu.min_height = 500
-  	$dlgMenu.min_width = 600
-	$dlgMenu.max_height = 500
-  	$dlgMenu.max_width = 600
+	$dlgMenu.min_height = 525
+  	$dlgMenu.min_width = 617
+	$dlgMenu.max_height = 525
+  	$dlgMenu.max_width = 617
   	 	
    	#Show Dialog on modal mode
-	$dlgMenu.show_modal
-
+	#$dlgMenu.show_modal marche pas sinn ca bloque le javascript
+	$dlgMenu.show
 	
 	$dlgMenu.add_action_callback("GESTURE_QUIT") {|dialog, params|
 	    result = UI.messagebox("You quit GESTURE "), MB_OKCANCEL
+		#BUG API sketchup non imlemente windaube
 	    if result==1
 	     	$dlgMenu.close
 	     	#tuer le plugins????? TCP C++ y touti
@@ -192,7 +207,8 @@ def menu
    		add_status("version", $SUversion.to_f.to_s)
    		add_status("nomenv", $titlemodel.to_s)
    		add_status("nbrobj", $number_obj.to_s)
-
+		
+		
    	}
 
    	
