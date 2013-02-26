@@ -65,13 +65,14 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #DONE	#creer fonction de log
 #		#code error
 #		#test du teuber
-#DONE	# nom de fichier complet lors du statut
+#DONE	#nom de fichier complet lors du statut
 #		#si statu NOK prevoir griser btouton d'action
 #		#rajouter les tips sur les status?
 #		#IMPORTANT differencier le code selon macOS ou microshiotte windaube
 #DONE	#ranger file 
 #		#splashscreen image alternative
-#		#regler taille fenetre
+#DONE	#regler taille fenetre splashscreen
+#		#bug UI msgBox: windows doesn't display option
 
 #############################################################
 #						Splash Screen						#
@@ -81,8 +82,8 @@ def splashscreen
 	progressbar_score = 0
 	
 	#create WebDialog UI
-	splashscreen_width = 660
-  	splashscreen_height = 420
+	splashscreen_width =677 #660
+  	splashscreen_height = 435 #420
   	
   	c = Sketchup.active_model.active_view.center
   	
@@ -90,10 +91,10 @@ def splashscreen
   	$dlgSplashScreen.set_file File.dirname(__FILE__) + "/GESTURE/Control/splashscreen.html"
 	
 	
-	$dlgSplashScreen.min_height = 420
-  	$dlgSplashScreen.min_width = 660
-	$dlgSplashScreen.max_height = 420
-  	$dlgSplashScreen.max_width = 660
+	$dlgSplashScreen.min_height = 435
+  	$dlgSplashScreen.min_width = 677
+	$dlgSplashScreen.max_height = 435
+  	$dlgSplashScreen.max_width = 677
 	
 	$dlgSplashScreen.show
 	#splashscreen stucks on the top

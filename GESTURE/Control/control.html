@@ -10,7 +10,23 @@
 
 </head>
 <body>
+	<script language="JavaScript">
 	
+	if (navigator.getUserMedia) { 
+   // do stuff 
+   alert("yes");
+} 
+else { 
+   alert("merde");
+}
+	navigator.getUserMedia({video:true, audio:false}, success, error); 
+	
+	function success(stream) { 
+   document.getElementById('myVideo').src = stream; 
+	}
+	</script>
+	
+	<div id="myVideo"></div>
 	
 	<label for="flip2">Flip switch:</label>
             <select name="flip2" id="flip2" data-role="slider">
