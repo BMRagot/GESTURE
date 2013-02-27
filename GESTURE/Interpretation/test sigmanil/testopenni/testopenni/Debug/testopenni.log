@@ -1,0 +1,27 @@
+﻿La génération a démarré 27/02/2013 20:01:22.
+     1>Projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\testopenni\testopenni\testopenni.vcxproj" sur le nœud 2 (build cible(s)).
+     1>PrepareForBuild:
+         Création du répertoire "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\testopenni\Debug\".
+       InitializeBuildStatus:
+         Création de "Debug\testopenni.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\OpenNI2\Include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\testopenni.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\OpenNI2\Include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\testopenni.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt testopenni.cpp
+         testopenni.cpp
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\testopenni.exe.embed.manifest.res" Debug\testopenni_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\testopenni\Debug\testopenni.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\OpenNI2\Lib\\" OpenNI2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\testopenni.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\testopenni\Debug\testopenni.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\testopenni\Debug\testopenni.lib" /MACHINE:X86 Debug\testopenni.exe.embed.manifest.res
+         Debug\stdafx.obj
+         Debug\testopenni.obj
+     1>testopenni.obj : error LNK2019: symbole externe non résolu __imp__oniInitialize référencé dans la fonction "public: static enum openni::Status __cdecl openni::OpenNI::initialize(void)" (?initialize@OpenNI@openni@@SA?AW4Status@2@XZ)
+     1>testopenni.obj : error LNK2019: symbole externe non résolu __imp__oniGetExtendedError référencé dans la fonction "public: static char const * __cdecl openni::OpenNI::getExtendedError(void)" (?getExtendedError@OpenNI@openni@@SAPBDXZ)
+     1>testopenni.obj : error LNK2019: symbole externe non résolu __imp__oniStreamDestroy référencé dans la fonction "public: void __thiscall openni::VideoStream::destroy(void)" (?destroy@VideoStream@openni@@QAEXXZ)
+     1>testopenni.obj : error LNK2019: symbole externe non résolu __imp__oniDeviceClose référencé dans la fonction "public: void __thiscall openni::Device::close(void)" (?close@Device@openni@@QAEXXZ)
+     1>C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\testopenni\Debug\testopenni.exe : fatal error LNK1120: 4 externes non résolus
+     1>Génération du projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\testopenni\testopenni\testopenni.vcxproj" terminée (build cible(s)) -- ÉCHEC.
+
+ÉCHEC de la build.
+
+Temps écoulé 00:00:01.87

@@ -46,6 +46,8 @@ UI.menu("Plugins").add_item("GESTURE...") {
         else
 			#call Splash Screen function to load resources
 			splashscreen
+			#create log file
+			log(1,'start')
 		end#if
  
 }
@@ -73,6 +75,9 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #		#splashscreen image alternative
 #DONE	#regler taille fenetre splashscreen
 #		#bug UI msgBox: windows doesn't display option
+#		#REgler probleme de position
+#		#creer un joli repere avec de quoi afficher les selections...
+#		#définir position et format de la fenetre de control
 
 #############################################################
 #						Splash Screen						#
@@ -243,32 +248,48 @@ end
 #############################################################
 def controlgesture
 
-	repere_width = 150
-  	repere_height = 200
+	#repere_width = 150
+  	#repere_height = 200
   	
-  	control_width = 300
+	#toolbar_width = 300
+  	#toolbar_height = 60
+	
+  	control_width = 250
   	control_height = 300
 
-	toolbar_width = 300
-  	toolbar_height = 60
-
-	c = Sketchup.active_model.active_view.center
+	$c = Sketchup.active_model.active_view.corner 3
 	
-	dlgRepere = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", repere_width, repere_height, 0, 2*c[1]-repere_height/2, true);
-  	dlgRepere.set_file File.dirname(__FILE__) + "/GESTURE/Control/repere.html"
+	#dlgRepere = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", repere_width, repere_height, 0, 2*c[1]-repere_height/2, true);
+  	#dlgRepere.set_file File.dirname(__FILE__) + "/GESTURE/Control/repere.html"
 		
-	dlgRepere.show
-
-	dlgControl = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", control_width, control_height, 2*c[0], 2*c[1], true);
-  	dlgControl.set_file File.dirname(__FILE__) + "/GESTURE/Control/control.html"
-		
-	dlgControl.show	
+	#dlgRepere.show
 	
-	dlgToolbar = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", toolbar_width, toolbar_height, 2*c[0], 0, true);
-  	dlgToolbar.set_file File.dirname(__FILE__) + "/GESTURE/Control/toolbar.html"
+	#dlgToolbar = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", toolbar_width, toolbar_height, 2*c[0], 0, true);
+  	#dlgToolbar.set_file File.dirname(__FILE__) + "/GESTURE/Control/toolbar.html"
 		
-	dlgToolbar.show
+	#dlgToolbar.show
 
+	$dlgControl = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTUREcontrol", control_width , control_height,  0, 0, true);
+  	$dlgControl.set_file File.dirname(__FILE__) + "/GESTURE/Control/control.html"
+		
+	$dlgControl.show	
+	
+	$dlgControl.add_action_callback("GESTURE_GETMENU") {|dialog, params|
+	     $dlgControl.close
+	     $dlgMenu.show
+	     ##pause de l'interpreation???
+   	}
+	
+	$dlgControl.add_action_callback("GESTURE_INTERPRETATION") {|dialog, params|
+	     ##pause de l'interpreation
+		 if params.to_s=='on'
+			#UI.messagebox("faut demarrer ")
+		 else 
+			#UI.messagebox("faut arreter ")
+			#ajouter  le retour de statu dans la console			
+		 end
+		 
+   	}
 
 end
 
