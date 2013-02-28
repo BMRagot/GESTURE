@@ -60,7 +60,7 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #						TODO								#
 #############################################################
 
-#		#Demande d'enrgistrement avant de lancer le plugins?
+#		#Demande d'enrgistrement avant de lancer le plugins?-->marche pas trop
 #		#DEscription fichier 
 #		#entete fichier html
 #		#recherche pour ejecter la webdialog
@@ -77,7 +77,14 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #		#bug UI msgBox: windows doesn't display option
 #		#REgler probleme de position
 #		#creer un joli repere avec de quoi afficher les selections...
-#		#définir position et format de la fenetre de control
+#DONE	#définir position et format de la fenetre de control
+#DONE	#control UI:  defilement console
+#DONE	#control UI: prévoir la fonction d'ajout
+#DONE	#control UI: acvier le défilement uniquement si cela ne rentre pas....
+#		#control UI: regler taille console
+#		#probleme du footer du menu principal
+
+
 
 #############################################################
 #						Splash Screen						#
@@ -223,12 +230,6 @@ def menu
 		
    	}
 
-   	
-   	
-   	
-   	
-  
-	
 
 end
 
@@ -254,8 +255,8 @@ def controlgesture
 	#toolbar_width = 300
   	#toolbar_height = 60
 	
-  	control_width = 250
-  	control_height = 300
+  	control_width = 345
+  	control_height = 645
 
 	$c = Sketchup.active_model.active_view.corner 3
 	
@@ -271,7 +272,10 @@ def controlgesture
 
 	$dlgControl = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTUREcontrol", control_width , control_height,  0, 0, true);
   	$dlgControl.set_file File.dirname(__FILE__) + "/GESTURE/Control/control.html"
-		
+	
+	$dlgControl.set_position $c[0]-control_width, $c[1]-control_height
+	$dlgControl.set_size control_width, control_height
+	
 	$dlgControl.show	
 	
 	$dlgControl.add_action_callback("GESTURE_GETMENU") {|dialog, params|
@@ -290,7 +294,12 @@ def controlgesture
 		 end
 		 
    	}
-
+end
+def update_console(a)
+		script2 = 'update_console(\''+a+'\');'
+#				document.getElementById("Kinect").textContent=\'4\';'
+		puts script2
+		$dlgControl.execute_script( script2 )   	
 end
 
 

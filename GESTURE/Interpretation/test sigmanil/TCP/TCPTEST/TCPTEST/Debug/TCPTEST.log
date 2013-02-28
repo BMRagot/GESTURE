@@ -1,0 +1,103 @@
+﻿La génération a démarré 28/02/2013 20:32:42.
+     1>Projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPTEST\TCPTEST\TCPTEST.vcxproj" sur le nœud 2 (build cible(s)).
+     1>PrepareForBuild:
+         Création du répertoire "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPTEST\Debug\".
+       InitializeBuildStatus:
+         Création de "Debug\TCPTEST.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\TCPTEST.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\TCPTEST.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt TCPTEST.cpp
+         TCPTEST.cpp
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(3): warning C4627: '#include <winsock2.h>' : ignoré lors de la recherche d'une utilisation d'un en-tête précompilé
+                 Ajoutez la directive à 'StdAfx.h' ou régénérez l'en-tête précompilé
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(6): warning C4627: '#include <stdlib.h>' : ignoré lors de la recherche d'une utilisation d'un en-tête précompilé
+                 Ajoutez la directive à 'StdAfx.h' ou régénérez l'en-tête précompilé
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(7): warning C4603: 'PORT' : la macro n'est pas définie ou la définition est différente après l'utilisation d'un en-tête précompilé
+                 Ajoutez la macro à l'en-tête précompilé au lieu de définir ici
+                 c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(8) : utilisation d'un en-tête précompilé
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(13): error C2065: 'WSADATA' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(13): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'WSAData'
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(13): error C2065: 'WSAData' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(14): error C2065: 'WSAData' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(14): error C3861: 'WSAStartup' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(14): error C3861: 'MAKEWORD' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(18): error C2065: 'SOCKADDR_IN' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(18): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'sin'
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(18): error C2065: 'sin' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(19): error C2065: 'SOCKET' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(19): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'sock'
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(19): error C2065: 'sock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(20): error C2065: 'socklen_t' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(20): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'recsize'
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(20): error C2065: 'recsize' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(20): error C2065: 'sin' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(20): error C2070: ''unknown-type'' : opérande sizeof non conforme
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(23): error C2065: 'SOCKADDR_IN' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(23): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'csin'
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(23): error C2065: 'csin' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(24): error C2065: 'SOCKET' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(24): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'csock'
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(24): error C2065: 'csock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(25): error C2065: 'socklen_t' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(25): error C2146: erreur de syntaxe : absence de ';' avant l'identificateur 'crecsize'
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(25): error C2065: 'crecsize' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(25): error C2065: 'csin' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(25): error C2070: ''unknown-type'' : opérande sizeof non conforme
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(33): error C2065: 'sock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(33): error C2065: 'AF_INET' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(33): error C2065: 'SOCK_STREAM' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(33): error C3861: 'socket' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(36): error C2065: 'sock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(36): error C2065: 'INVALID_SOCKET' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(38): error C2065: 'sock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(41): error C2065: 'sin' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(41): error C2228: la partie gauche de '.sin_addr' doit avoir un class/struct/union
+                 le type est ''unknown-type''
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(41): error C2228: la partie gauche de '.s_addr' doit avoir un class/struct/union
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(41): error C2065: 'INADDR_ANY' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(41): error C3861: 'htonl' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(42): error C2065: 'sin' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(42): error C2228: la partie gauche de '.sin_family' doit avoir un class/struct/union
+                 le type est ''unknown-type''
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(42): error C2065: 'AF_INET' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(43): error C2065: 'sin' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(43): error C2228: la partie gauche de '.sin_port' doit avoir un class/struct/union
+                 le type est ''unknown-type''
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(43): error C2065: 'PORT' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(43): error C3861: 'htons' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(44): error C2065: 'sock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(44): error C2065: 'SOCKADDR' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(44): error C2059: erreur de syntaxe : ')'
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(47): error C2065: 'SOCKET_ERROR' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(44): error C3861: 'bind' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(50): error C2065: 'sock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(50): error C3861: 'listen' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(51): error C2065: 'PORT' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(54): error C2065: 'SOCKET_ERROR' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(57): error C2065: 'PORT' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(58): error C2065: 'csock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(58): error C2065: 'sock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(58): error C2065: 'SOCKADDR' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(58): error C2059: erreur de syntaxe : ')'
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(59): error C2065: 'csock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(59): error C2065: 'csin' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(59): error C2228: la partie gauche de '.sin_addr' doit avoir un class/struct/union
+                 le type est ''unknown-type''
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(59): error C2065: 'csin' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(59): error C2228: la partie gauche de '.sin_port' doit avoir un class/struct/union
+                 le type est ''unknown-type''
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(58): error C3861: 'accept' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(59): error C3861: 'inet_ntoa' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(59): error C3861: 'htons' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(69): error C2065: 'csock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(69): error C3861: 'closesocket' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(71): error C2065: 'sock' : identificateur non déclaré
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(71): error C3861: 'closesocket' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(78): error C3861: 'WSACleanup' : identificateur introuvable
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\test sigmanil\tcp\tcptest\tcptest\tcptest.cpp(82): error C2065: 'EXIT_SUCCESS' : identificateur non déclaré
+     1>Génération du projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPTEST\TCPTEST\TCPTEST.vcxproj" terminée (build cible(s)) -- ÉCHEC.
+
+ÉCHEC de la build.
+
+Temps écoulé 00:00:01.09
