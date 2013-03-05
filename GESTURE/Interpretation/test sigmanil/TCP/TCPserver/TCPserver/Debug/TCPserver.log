@@ -1,13 +1,13 @@
-﻿La génération a démarré 28/02/2013 22:57:20.
+﻿La génération a démarré 01/03/2013 17:10:33.
      1>Projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPserver\TCPserver\TCPserver.vcxproj" sur le nœud 2 (build cible(s)).
      1>InitializeBuildStatus:
          Création de "Debug\TCPserver.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
        ClCompile:
-         Toutes les sorties sont à jour.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt mainserver.cpp
+         mainserver.cpp
        ManifestResourceCompile:
          Toutes les sorties sont à jour.
        Link:
-         Toutes les sorties sont à jour.
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPserver\Debug\TCPserver.exe" /INCREMENTAL /NOLOGO ws2_32.lib /MANIFEST /ManifestFile:"Debug\TCPserver.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPserver\Debug\TCPserver.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPserver\Debug\TCPserver.lib" /MACHINE:X86 Debug\TCPserver.exe.embed.manifest.res
          Debug\mainserver.obj
        Manifest:
@@ -23,4 +23,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:01.11
+Temps écoulé 00:00:02.25

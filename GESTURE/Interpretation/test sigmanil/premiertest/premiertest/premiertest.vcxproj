@@ -9,6 +9,10 @@
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="test2|Win32">
+      <Configuration>test2</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="test|Win32">
       <Configuration>test</Configuration>
       <Platform>Win32</Platform>
@@ -58,6 +62,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='test|Win32'">
     <IncludePath>C:\Program Files\SigmaNILFramework\inc;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Program Files\SigmaNILFramework\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\Program Files\SigmaNILFramework\src;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='test2|Win32'">
+    <IncludePath>C:\Program Files\SigmaNILFramework\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -97,17 +105,26 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='test|Win32'">
     <Link>
-      <AdditionalLibraryDirectories>C:\Program Files\SigmaNILFramework\lib;C:\boost\boost_1_53_0\bin.v2\libs\chrono\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\system\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\date_time\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\thread\build\msvc-10.0\release\link-static\threading-multi;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files\SigmaNILFramework\bin;C:\boost\boost_1_53_0\bin.v2\libs\chrono\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\system\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\date_time\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\thread\build\msvc-10.0\release\link-static\threading-multi;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SigmaNIL_2.0_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <DelayLoadDLLs>
       </DelayLoadDLLs>
     </Link>
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\boost\boost_1_53_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\SigmaNILFramework\inc;C:\boost\boost_1_53_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
     </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='test2|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Program Files\SigmaNILFramework\src;C:\boost\boost_1_53_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\boost\boost_1_53_0\bin.v2\libs\system\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\date_time\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\chrono\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\thread\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libboost_thread-vc100-mt-1_53.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

@@ -9,9 +9,9 @@ using namespace SigmaNIL; //Use SigmaNIL namespace to access library objects wit
 int main(int argc, char *argv[])
 {
 
-	 NIL nil;
+	SigmaNIL::NIL nil;
 
-	 nil.Init(OpenNI2);
+	 nil.Init();//OpenNI2
 
 	
 	std::cout << nil.GetLastErrorString();

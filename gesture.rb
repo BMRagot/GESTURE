@@ -11,7 +11,14 @@
 #	author: B. MARICHAL & A. VERON
 #	date: 02/2013
 #	name: GESTURE Plugins
+#	version: 0.1
 #	description: 
+#		The GESTURE plugins allows you to manipulate your 3D objects using a Kinect.
+#		You can find more information about project here: www.gesture.com
+#		
+#
+#
+#
 
 
 
@@ -41,14 +48,14 @@ UI.menu("Plugins").add_item("GESTURE...") {
    @model=Sketchup.active_model
         path=@model.path.tr("\\", "/")
         if not path or path==""
-            UI.messagebox("OBJExporter:\n\nEnregistrez le fichier SKP avant de l'exporter en OBJ\n")
+            UI.messagebox("GESTURE Plugins:\n\nVeuillez enregistrer votre fichier avant d'utiliser le contrôle gestuel.\n")
             return nil
         else
 			#call Splash Screen function to load resources
 			splashscreen
 			#create log file
 			log(1,'start')
-		end#if
+		end
  
 }
 
@@ -60,9 +67,9 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #						TODO								#
 #############################################################
 
-#		#Demande d'enrgistrement avant de lancer le plugins?-->marche pas trop
-#		#DEscription fichier 
-#		#entete fichier html
+#DONE	#Demande d'enrgistrement avant de lancer le plugins?-->fonctionne uniquement pour les nouveax fichier pas pour les fichiers modifiés
+#DONE	#DEscription fichier 
+#DONE	#entete fichier html
 #		#recherche pour ejecter la webdialog
 #DONE	#creer fonction de log
 #		#code error
@@ -81,9 +88,9 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #DONE	#control UI:  defilement console
 #DONE	#control UI: prévoir la fonction d'ajout
 #DONE	#control UI: acvier le défilement uniquement si cela ne rentre pas....
-#		#control UI: regler taille console
+#DONE	#control UI: regler taille console
 #		#probleme du footer du menu principal
-
+#		#detection fermeture des fenetres
 
 
 #############################################################
@@ -97,9 +104,10 @@ def splashscreen
 	splashscreen_width =677 #660
   	splashscreen_height = 435 #420
   	
-  	c = Sketchup.active_model.active_view.center
-  	
-  	$dlgSplashScreen = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", splashscreen_width, splashscreen_height, c[0]-splashscreen_width/2, c[1]-splashscreen_height/2, true);
+	#get sreen size to set the position of UI
+  	$c = Sketchup.active_model.active_view.center
+	
+  	$dlgSplashScreen = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", splashscreen_width, splashscreen_height, $c[0]-splashscreen_width/2, $c[1]-splashscreen_height/2, true);
   	$dlgSplashScreen.set_file File.dirname(__FILE__) + "/GESTURE/Control/splashscreen.html"
 	
 	
@@ -107,6 +115,9 @@ def splashscreen
   	$dlgSplashScreen.min_width = 677
 	$dlgSplashScreen.max_height = 435
   	$dlgSplashScreen.max_width = 677
+	
+	$dlgSplashScreen.set_position $c[0]-splashscreen_width/2, $c[1]-splashscreen_height/2
+	$dlgSplashScreen.set_size splashscreen_width, splashscreen_height
 	
 	$dlgSplashScreen.show
 	#splashscreen stucks on the top
@@ -184,22 +195,23 @@ def menu
 	menu_width = 617  #600
   	menu_height = 525  #500
 
-	c = Sketchup.active_model.active_view.center
-  	$dlgMenu = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", menu_width, menu_height, c[0]-menu_width/2, c[1]-menu_height/2, true);
+  	$dlgMenu = UI::WebDialog.new("-=- GESTURE -=-", false, "GESTURE", menu_width, menu_height, $c[0]-menu_width/2, $c[1]-menu_height/2, true);
   	$dlgMenu.set_file File.dirname(__FILE__) + "/GESTURE/Control/menu.html"
-	
 	
 	$dlgMenu.min_height = 525
   	$dlgMenu.min_width = 617
 	$dlgMenu.max_height = 525
   	$dlgMenu.max_width = 617
   	 	
+	$dlgMenu.set_position $c[0]-menu_width/2, $c[1]-menu_height/2
+	$dlgMenu.set_size menu_width, menu_height
+	
    	#Show Dialog on modal mode
 	#$dlgMenu.show_modal marche pas sinn ca bloque le javascript
 	$dlgMenu.show
 	
 	$dlgMenu.add_action_callback("GESTURE_QUIT") {|dialog, params|
-	    result = UI.messagebox("You quit GESTURE "), MB_OKCANCEL
+	    result = UI.messagebox("You quit GESTURE "),MB_OKCANCEL
 		#BUG API sketchup non imlemente windaube
 	    if result==1
 	     	$dlgMenu.close
@@ -226,10 +238,8 @@ def menu
    		add_status("version", $SUversion.to_f.to_s)
    		add_status("nomenv", $titlemodel.to_s + ".skp")
    		add_status("nbrobj", $number_obj.to_s)
-		
-		
+				
    	}
-
 
 end
 
@@ -258,7 +268,7 @@ def controlgesture
   	control_width = 345
   	control_height = 645
 
-	$c = Sketchup.active_model.active_view.corner 3
+	#$c = Sketchup.active_model.active_view.corner 3
 	
 	#dlgRepere = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", repere_width, repere_height, 0, 2*c[1]-repere_height/2, true);
   	#dlgRepere.set_file File.dirname(__FILE__) + "/GESTURE/Control/repere.html"
@@ -273,7 +283,7 @@ def controlgesture
 	$dlgControl = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTUREcontrol", control_width , control_height,  0, 0, true);
   	$dlgControl.set_file File.dirname(__FILE__) + "/GESTURE/Control/control.html"
 	
-	$dlgControl.set_position $c[0]-control_width, $c[1]-control_height
+	$dlgControl.set_position 2*$c[0]-control_width, 2*$c[1]-control_height
 	$dlgControl.set_size control_width, control_height
 	
 	$dlgControl.show	
@@ -297,7 +307,6 @@ def controlgesture
 end
 def update_console(a)
 		script2 = 'update_console(\''+a+'\');'
-#				document.getElementById("Kinect").textContent=\'4\';'
 		puts script2
 		$dlgControl.execute_script( script2 )   	
 end

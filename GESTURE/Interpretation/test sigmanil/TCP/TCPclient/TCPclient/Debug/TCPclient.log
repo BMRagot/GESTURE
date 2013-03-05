@@ -1,23 +1,20 @@
-﻿La génération a démarré 28/02/2013 22:57:27.
+﻿La génération a démarré 03/03/2013 18:11:12.
      1>Projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPclient\TCPclient\TCPclient.vcxproj" sur le nœud 2 (build cible(s)).
-     1>PrepareForBuild:
-         Création du répertoire "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPclient\Debug\".
-       InitializeBuildStatus:
+     1>InitializeBuildStatus:
          Création de "Debug\TCPclient.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt mainclient.cpp
          mainclient.cpp
        ManifestResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\TCPclient.exe.embed.manifest.res" Debug\TCPclient_manifest.rc 
+         Toutes les sorties sont à jour.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPclient\Debug\TCPclient.exe" /INCREMENTAL /NOLOGO ws2_32.lib /MANIFEST /ManifestFile:"Debug\TCPclient.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPclient\Debug\TCPclient.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPclient\Debug\TCPclient.lib" /MACHINE:X86 Debug\TCPclient.exe.embed.manifest.res
          Debug\mainclient.obj
        Manifest:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\TCPclient.exe.embed.manifest" /manifest Debug\TCPclient.exe.intermediate.manifest
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\TCPclient.exe.embed.manifest.res" Debug\TCPclient_manifest.rc 
+         Toutes les sorties sont à jour.
        LinkEmbedManifest:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPclient\Debug\TCPclient.exe" /INCREMENTAL /NOLOGO ws2_32.lib /MANIFEST /ManifestFile:"Debug\TCPclient.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPclient\Debug\TCPclient.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPclient\Debug\TCPclient.lib" /MACHINE:X86 Debug\TCPclient.exe.embed.manifest.res
-         Debug\mainclient.obj
+         Toutes les sorties sont à jour.
          TCPclient.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPclient\Debug\TCPclient.exe
        FinalizeBuildStatus:
          Suppression du fichier "Debug\TCPclient.unsuccessfulbuild".
@@ -26,4 +23,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:02.47
+Temps écoulé 00:00:02.31

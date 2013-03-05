@@ -21,7 +21,7 @@ begin
   pre='C:/ruby'<<RUBY_VERSION.split('.').join<<'/lib/ruby'
   #pre='/usr/lib/ruby'
 
-  plat=RUBY_PLATFORM
+  plat='i386-mingw32'#RUBY_PLATFORM
   # 
   # add the standard lib path 
  $LOAD_PATH << "#{pre}/#{ver}" 
