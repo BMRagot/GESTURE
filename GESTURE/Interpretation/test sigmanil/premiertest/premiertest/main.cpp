@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 
 	SigmaNIL::NIL nil;
 
-	 nil.Init();//OpenNI2
+	 nil.Init(OpenNI2);//
 
 	
 	std::cout << nil.GetLastErrorString();
