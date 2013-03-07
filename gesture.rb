@@ -24,6 +24,7 @@
 
 # First we pull in the standard API hooks.
 require 'sketchup.rb'
+require 'loadpath.rb'
 
 #############################################################
 #					DEVELOPMENT								#
@@ -77,7 +78,7 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #DONE	#nom de fichier complet lors du statut
 #		#si statu NOK prevoir griser btouton d'action
 #		#rajouter les tips sur les status?
-#		#IMPORTANT differencier le code selon macOS ou microshiotte windaube
+#DONE	#IMPORTANT differencier le code selon macOS ou microshiotte windaube --> not completed on oublie
 #DONE	#ranger file 
 #		#splashscreen image alternative
 #DONE	#regler taille fenetre splashscreen
@@ -94,7 +95,8 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #DONE	#Police console
 #DONE	#Taille du control qui suit les retractions des modules
 #		#TCP
-#		#
+#		#STart timer SU pour les boucle regarder de pres
+#		#finir le log durant e splashscreen...
 
 
 #############################################################
@@ -133,7 +135,7 @@ def splashscreen
 		#useless
 		#splashscreen_video=message.to_i
 		# just +1 to update
-		progressbar_score = progressbar_score + 100
+		progressbar_score = progressbar_score + 90
 		update_progress(progressbar_score)
 	end
 
@@ -153,6 +155,23 @@ def splashscreen
 	$target = $camera.target
 	$up = $camera.up
 	$direction = $camera.direction	
+	log(2,'###SketchUp Object')
+	log(2,'SU Version: '+$SUversion.to_s)
+	##lo
+	
+	#Ruby resources
+	$rb=RUBY_VERSION
+	log(2,'###RUBY RESOURCES')
+	log(2,'Ruby Version :'+$rb.to_s)
+	if File.exist?($LOAD_PATH[3]) && File.exist?($LOAD_PATH[2]) && $rb=="1.8.6"
+		$rbres=true
+		log(2,"Load Path updated: All OK")
+	else
+		$rbres=false
+		log(2,"Load Path updated: NOT OK")		
+	end
+	progressbar_score = progressbar_score + 10
+	update_progress(progressbar_score)
 	
 	# Create TCPServer
 	
@@ -238,9 +257,13 @@ def menu
    		add_status("Kinect","NOK")
    		
    		
-   		add_status("version", $SUversion.to_f.to_s)
-   		add_status("nomenv", $titlemodel.to_s + ".skp")
+   		add_status("versionSU", $SUversion.to_f.to_s)
+   		if $rbres
+			add_status("versionrb",$rb)
+		end
+		add_status("nomenv", $titlemodel.to_s + ".skp")
    		add_status("nbrobj", $number_obj.to_s)
+		
 				
    	}
 

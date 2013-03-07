@@ -1,5 +1,5 @@
 #script test de socket?
-require 'socket'
+require $LOAD_PATH[3]+'/socket.so'
 
 # Add a menu item to launch GESTURE plugin.
 UI.menu("Plugins").add_item("Sockettest..") {
