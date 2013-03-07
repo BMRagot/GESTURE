@@ -155,7 +155,7 @@ def splashscreen
 	$target = $camera.target
 	$up = $camera.up
 	$direction = $camera.direction	
-	log(2,'###SketchUp Object')
+	log(2,"###SketchUp Object")
 	log(2,'SU Version: '+$SUversion.to_s)
 	##lo
 	

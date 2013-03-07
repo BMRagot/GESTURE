@@ -1,0 +1,11 @@
+##########################################################################################
+				GESTURE Plugins 
+					Log File
+		Plugin started :Thu Mar 07 14:41:47 +0100 2013
+						Gesture 2013 Copyright
+##########################################################################################
+###SketchUp Object
+SU Version: 8.0.16846
+###RUBY RESOURCES
+Ruby Version :1.8.6
+Load Path updated: All OK
