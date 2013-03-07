@@ -1,0 +1,82 @@
+﻿La génération a démarré 07/03/2013 18:47:29.
+     1>Projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\premiertest.vcxproj" sur le nœud 3 (build cible(s)).
+     1>InitializeBuildStatus:
+         Création de "premiertest.dir\Debug\premiertest.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       CustomBuild:
+         Toutes les sorties sont à jour.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I"C:/Program Files/SigmaNILFramework/inc" /I"C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest" /IC:/boost/boost_1_53_0 /IC:\boost\boost_1_53_0\boost /Zi /nologo /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D _DEBUG /D HAS_BOOST /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"premiertest.dir\Debug\\" /Fd"C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/Debug/premiertest.pdb" /Gd /TP /errorReport:prompt main.cpp  /Zm1000 
+         main.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(348): warning C4996: 'std::_Uninitialized_copy0': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\memory(333) : voir la déclaration de 'std::_Uninitialized_copy0'
+                 C:\boost\boost_1_53_0\boost/signals2/detail/auto_buffer.hpp(192) : voir la référence à l'instanciation de la fonction modèle '_FwdIt std::uninitialized_copy<I,boost::variant<T0_,T1>*>(_InIt,_InIt,_FwdIt)' en cours de compilation
+                 with
+                 [
+                     _FwdIt=boost::variant<boost::shared_ptr<void>,boost::signals2::detail::foreign_void_shared_ptr> *,
+                     I=boost::variant<boost::shared_ptr<void>,boost::signals2::detail::foreign_void_shared_ptr> *,
+                     T0_=boost::shared_ptr<void>,
+                     T1=boost::signals2::detail::foreign_void_shared_ptr,
+                     _InIt=boost::variant<boost::shared_ptr<void>,boost::signals2::detail::foreign_void_shared_ptr> *
+                 ]
+                 C:\boost\boost_1_53_0\boost/signals2/detail/auto_buffer.hpp(179) : voir la référence à l'instanciation de la fonction modèle 'void boost::signals2::detail::auto_buffer<T,StackBufferPolicy>::copy_rai<I,false>(I,I,boost::variant<T0_,T1> *,const boost::integral_constant<bool,false> &)' en cours de compilation
+                 with
+                 [
+                     T=boost::signals2::detail::void_shared_ptr_variant,
+                     StackBufferPolicy=boost::signals2::detail::store_n_objects<10>,
+                     I=boost::variant<boost::shared_ptr<void>,boost::signals2::detail::foreign_void_shared_ptr> *,
+                     T0_=boost::shared_ptr<void>,
+                     T1=boost::signals2::detail::foreign_void_shared_ptr
+                 ]
+                 C:\boost\boost_1_53_0\boost/signals2/detail/auto_buffer.hpp(205) : voir la référence à l'instanciation de la fonction modèle 'void boost::signals2::detail::auto_buffer<T,StackBufferPolicy>::copy_impl<I>(I,I,boost::variant<T0_,T1> *,std::random_access_iterator_tag)' en cours de compilation
+                 with
+                 [
+                     T=boost::signals2::detail::void_shared_ptr_variant,
+                     StackBufferPolicy=boost::signals2::detail::store_n_objects<10>,
+                     I=boost::variant<boost::shared_ptr<void>,boost::signals2::detail::foreign_void_shared_ptr> *,
+                     T0_=boost::shared_ptr<void>,
+                     T1=boost::signals2::detail::foreign_void_shared_ptr
+                 ]
+                 C:\boost\boost_1_53_0\boost/signals2/detail/auto_buffer.hpp(289) : voir la référence à l'instanciation de la fonction modèle 'void boost::signals2::detail::auto_buffer<T,StackBufferPolicy>::copy_impl<boost::variant<T0_,T1>*>(I,I,boost::variant<T0_,T1> *)' en cours de compilation
+                 with
+                 [
+                     T=boost::signals2::detail::void_shared_ptr_variant,
+                     StackBufferPolicy=boost::signals2::detail::store_n_objects<10>,
+                     T0_=boost::shared_ptr<void>,
+                     T1=boost::signals2::detail::foreign_void_shared_ptr,
+                     I=boost::variant<boost::shared_ptr<void>,boost::signals2::detail::foreign_void_shared_ptr> *
+                 ]
+                 C:\boost\boost_1_53_0\boost/signals2/detail/auto_buffer.hpp(282) : lors de la compilation de la fonction membre 'boost::variant<T0_,T1> *boost::signals2::detail::auto_buffer<T,StackBufferPolicy>::move_to_new_buffer(unsigned __int64,const boost::false_type &)' de la classe modèle
+                 with
+                 [
+                     T0_=boost::shared_ptr<void>,
+                     T1=boost::signals2::detail::foreign_void_shared_ptr,
+                     T=boost::signals2::detail::void_shared_ptr_variant,
+                     StackBufferPolicy=boost::signals2::detail::store_n_objects<10>
+                 ]
+                 C:\boost\boost_1_53_0\boost/signals2/detail/slot_call_iterator.hpp(40) : voir la référence à l'instanciation de la classe modèle 'boost::signals2::detail::auto_buffer<T,StackBufferPolicy>' en cours de compilation
+                 with
+                 [
+                     T=boost::signals2::detail::void_shared_ptr_variant,
+                     StackBufferPolicy=boost::signals2::detail::store_n_objects<10>
+                 ]
+                 C:\boost\boost_1_53_0\boost/signals2/detail/slot_call_iterator.hpp(44) : voir la référence à l'instanciation de la classe modèle 'boost::signals2::detail::slot_call_iterator_cache<ResultType,Function>' en cours de compilation
+       ManifestResourceCompile:
+         Toutes les sorties sont à jour.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\Debug\premiertest.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:/Program Files/SigmaNILFramework/lib" /LIBPATH:"C:/Program Files/SigmaNILFramework/lib/Debug" /LIBPATH:C:/boost/boost_1_53_0/bin.v2/libs /LIBPATH:C:/boost/boost_1_53_0/bin.v2/libs/Debug /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\system\build\msvc-10.0\debug\address-model-64\architecture-x86\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\date_time\build\msvc-10.0\debug\address-model-64\architecture-x86\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\chrono\build\msvc-10.0\debug\address-model-64\architecture-x86\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\thread\build\msvc-10.0\debug\address-model-64\architecture-x86\link-static\threading-multi" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib SigmaNIL_2.0_x64.lib "libboost_system-vc100-mt-gd-1_53.lib" "libboost_chrono-vc100-mt-gd-1_53.lib" "libboost_date_time-vc100-mt-gd-1_53.lib" "libboost_thread-vc100-mt-gd-1_53.lib" /MANIFEST /ManifestFile:"premiertest.dir\Debug\premiertest.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/Debug/premiertest.pdb" /SUBSYSTEM:CONSOLE /STACK:"10000000" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/Debug/premiertest.lib" /MACHINE:X64 premiertest.dir\Debug\premiertest.exe.embed.manifest.res
+         premiertest.dir\Debug\main.obj  /machine:x64 /debug 
+         premiertest.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\Debug\premiertest.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"premiertest.dir\Debug\premiertest.exe.embed.manifest" /manifest premiertest.dir\Debug\premiertest.exe.intermediate.manifest
+         Toutes les sorties sont à jour.
+       LinkEmbedManifest:
+         Toutes les sorties sont à jour.
+         premiertest.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\Debug\premiertest.exe
+       FinalizeBuildStatus:
+         Suppression du fichier "premiertest.dir\Debug\premiertest.unsuccessfulbuild".
+         Mise à jour de l'horodatage "premiertest.dir\Debug\premiertest.lastbuildstate".
+     1>Génération du projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\premiertest.vcxproj" terminée (build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:08.86

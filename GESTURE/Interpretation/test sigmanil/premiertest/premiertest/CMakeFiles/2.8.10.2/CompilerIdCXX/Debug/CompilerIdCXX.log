@@ -1,0 +1,24 @@
+﻿La génération a démarré 07/03/2013 17:05:07.
+     1>Projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\2.8.10.2\CompilerIdCXX\CompilerIdCXX.vcxproj" sur le nœud 2 (build cible(s)).
+     1>InitializeBuildStatus:
+         Création de "Debug\CompilerIdCXX.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt CMakeCXXCompilerId.cpp
+         CMakeCXXCompilerId.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\CompilerIdCXX.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\2.8.10.2\CompilerIdCXX\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X86 Debug\CMakeCXXCompilerId.obj
+         CompilerIdCXX.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\2.8.10.2\CompilerIdCXX\.\CompilerIdCXX.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:".\CompilerIdCXX.exe;#1" /manifest Debug\CompilerIdCXX.exe.intermediate.manifest
+       PostBuildEvent:
+         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+         :VCEnd
+         CMAKE_CXX_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\cl.exe
+       FinalizeBuildStatus:
+         Suppression du fichier "Debug\CompilerIdCXX.unsuccessfulbuild".
+         Mise à jour de l'horodatage "Debug\CompilerIdCXX.lastbuildstate".
+     1>Génération du projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\2.8.10.2\CompilerIdCXX\CompilerIdCXX.vcxproj" terminée (build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:00.49

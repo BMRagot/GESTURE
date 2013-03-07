@@ -52,10 +52,10 @@ UI.menu("Plugins").add_item("GESTURE...") {
             UI.messagebox("GESTURE Plugins:\n\nVeuillez enregistrer votre fichier avant d'utiliser le contrôle gestuel.\n")
             return nil
         else
-			#call Splash Screen function to load resources
-			splashscreen
 			#create log file
 			log(1,'start')
+			#call Splash Screen function to load resources
+			splashscreen
 		end
  
 }
@@ -155,7 +155,7 @@ def splashscreen
 	$target = $camera.target
 	$up = $camera.up
 	$direction = $camera.direction	
-	log(2,"###SketchUp Object")
+	#log(2,"###SketchUp Object")
 	log(2,'SU Version: '+$SUversion.to_s)
 	##lo
 	

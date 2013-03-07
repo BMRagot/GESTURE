@@ -1,0 +1,205 @@
+The system is: Windows - 6.1 - x86
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+Microsoft (R) Visual Studio Version 10.0.30319.1.
+Copyright (C) Microsoft Corp. Tous droits réservés.
+1>------ D‚but de la g‚n‚rationÿ: Projetÿ: CompilerIdC, Configurationÿ: Debug Win32 ------
+1>La g‚n‚ration a d‚marr‚ 07/03/2013 17:05:04.
+1>InitializeBuildStatus:
+1>  Cr‚ation de "Debug\CompilerIdC.unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+1>ClCompile:
+1>  CMakeCCompilerId.c
+1>Link:
+1>  CompilerIdC.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\2.8.10.2\CompilerIdC\.\CompilerIdC.exe
+1>PostBuildEvent:
+1>  CMAKE_C_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\cl.exe
+1>FinalizeBuildStatus:
+1>  Suppression du fichier "Debug\CompilerIdC.unsuccessfulbuild".
+1>  Mise … jour de l'horodatage "Debug\CompilerIdC.lastbuildstate".
+1>
+1>La g‚n‚ration a r‚ussi.
+1>
+1>Temps ‚coul‚ 00:00:01.65
+========== G‚n‚rationÿ: 1 a r‚ussi, 0 a ‚chou‚, 0 mis … jour, 0 a ‚t‚ ignor‚ ==========
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj.user"
+
+The C compiler identification is MSVC, found in "C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler:  
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+Microsoft (R) Visual Studio Version 10.0.30319.1.
+Copyright (C) Microsoft Corp. Tous droits réservés.
+1>------ D‚but de la g‚n‚rationÿ: Projetÿ: CompilerIdCXX, Configurationÿ: Debug Win32 ------
+1>La g‚n‚ration a d‚marr‚ 07/03/2013 17:05:07.
+1>InitializeBuildStatus:
+1>  Cr‚ation de "Debug\CompilerIdCXX.unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+1>ClCompile:
+1>  CMakeCXXCompilerId.cpp
+1>Link:
+1>  CompilerIdCXX.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\2.8.10.2\CompilerIdCXX\.\CompilerIdCXX.exe
+1>PostBuildEvent:
+1>  CMAKE_CXX_COMPILER=C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\cl.exe
+1>FinalizeBuildStatus:
+1>  Suppression du fichier "Debug\CompilerIdCXX.unsuccessfulbuild".
+1>  Mise … jour de l'horodatage "Debug\CompilerIdCXX.lastbuildstate".
+1>
+1>La g‚n‚ration a r‚ussi.
+1>
+1>Temps ‚coul‚ 00:00:00.49
+========== G‚n‚rationÿ: 1 a r‚ussi, 0 a ‚chou‚, 0 mis … jour, 0 a ‚t‚ ignor‚ ==========
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj.user"
+
+The CXX compiler identification is MSVC, found in "C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/2.8.10.2/CompilerIdCXX/CompilerIdCXX.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/CMakeTmp
+
+Run Build Command:C:\PROGRA~2\MICROS~3.0\Common7\IDE\devenv.com CMAKE_TRY_COMPILE.sln /build Debug /project cmTryCompileExec4244414142
+
+Microsoft (R) Visual Studio Version 10.0.30319.1.
+Copyright (C) Microsoft Corp. Tous droits réservés.
+1>------ D‚but de la g‚n‚rationÿ: Projetÿ: cmTryCompileExec4244414142, Configurationÿ: Debug Win32 ------
+1>La g‚n‚ration a d‚marr‚ 07/03/2013 17:05:10.
+1>PrepareForBuild:
+1>  Cr‚ation du r‚pertoire "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\CMakeTmp\Debug\".
+1>InitializeBuildStatus:
+1>  Cr‚ation de "cmTryCompileExec4244414142.dir\Debug\cmTryCompileExec4244414142.unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+1>ClCompile:
+1>  Compilateur d'optimisation Microsoft (R) 32ÿbits C/C++ versionÿ16.00.30319.01 pour 80x86
+1>  Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+1>  
+1>  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTryCompileExec4244414142.dir\Debug\\" /Fd"C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec4244414142.pdb" /Gd /TC /analyze- /errorReport:prompt testCCompiler.c  /Zm1000 
+1>  
+1>  testCCompiler.c
+1>LinkEmbedManifest:
+1>  cmTryCompileExec4244414142.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec4244414142.exe
+1>FinalizeBuildStatus:
+1>  Suppression du fichier "cmTryCompileExec4244414142.dir\Debug\cmTryCompileExec4244414142.unsuccessfulbuild".
+1>  Mise … jour de l'horodatage "cmTryCompileExec4244414142.dir\Debug\cmTryCompileExec4244414142.lastbuildstate".
+1>
+1>La g‚n‚ration a r‚ussi.
+1>
+1>Temps ‚coul‚ 00:00:01.30
+========== G‚n‚rationÿ: 1 a r‚ussi, 0 a ‚chou‚, 0 mis … jour, 0 a ‚t‚ ignor‚ ==========
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/CMakeTmp
+
+Run Build Command:C:\PROGRA~2\MICROS~3.0\Common7\IDE\devenv.com CMAKE_TRY_COMPILE.sln /build Debug /project cmTryCompileExec4227592771
+
+Microsoft (R) Visual Studio Version 10.0.30319.1.
+Copyright (C) Microsoft Corp. Tous droits réservés.
+1>------ D‚but de la g‚n‚rationÿ: Projetÿ: cmTryCompileExec4227592771, Configurationÿ: Debug Win32 ------
+1>La g‚n‚ration a d‚marr‚ 07/03/2013 17:05:13.
+1>PrepareForBuild:
+1>  Cr‚ation du r‚pertoire "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\CMakeTmp\Debug\".
+1>InitializeBuildStatus:
+1>  Cr‚ation de "cmTryCompileExec4227592771.dir\Debug\cmTryCompileExec4227592771.unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+1>ClCompile:
+1>  Compilateur d'optimisation Microsoft (R) 32ÿbits C/C++ versionÿ16.00.30319.01 pour 80x86
+1>  Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+1>  
+1>  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTryCompileExec4227592771.dir\Debug\\" /Fd"C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec4227592771.pdb" /Gd /TC /analyze- /errorReport:prompt "..\..\..\..\..\..\..\..\..\..\CMake 2.8\share\cmake-2.8\Modules\CMakeCCompilerABI.c"  /Zm1000 
+1>  
+1>  CMakeCCompilerABI.c
+1>LinkEmbedManifest:
+1>  cmTryCompileExec4227592771.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec4227592771.exe
+1>FinalizeBuildStatus:
+1>  Suppression du fichier "cmTryCompileExec4227592771.dir\Debug\cmTryCompileExec4227592771.unsuccessfulbuild".
+1>  Mise … jour de l'horodatage "cmTryCompileExec4227592771.dir\Debug\cmTryCompileExec4227592771.lastbuildstate".
+1>
+1>La g‚n‚ration a r‚ussi.
+1>
+1>Temps ‚coul‚ 00:00:00.82
+========== G‚n‚rationÿ: 1 a r‚ussi, 0 a ‚chou‚, 0 mis … jour, 0 a ‚t‚ ignor‚ ==========
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/CMakeTmp
+
+Run Build Command:C:\PROGRA~2\MICROS~3.0\Common7\IDE\devenv.com CMAKE_TRY_COMPILE.sln /build Debug /project cmTryCompileExec2165707284
+
+Microsoft (R) Visual Studio Version 10.0.30319.1.
+Copyright (C) Microsoft Corp. Tous droits réservés.
+1>------ D‚but de la g‚n‚rationÿ: Projetÿ: cmTryCompileExec2165707284, Configurationÿ: Debug Win32 ------
+1>La g‚n‚ration a d‚marr‚ 07/03/2013 17:05:16.
+1>PrepareForBuild:
+1>  Cr‚ation du r‚pertoire "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\CMakeTmp\Debug\".
+1>InitializeBuildStatus:
+1>  Cr‚ation de "cmTryCompileExec2165707284.dir\Debug\cmTryCompileExec2165707284.unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+1>ClCompile:
+1>  Compilateur d'optimisation Microsoft (R) 32ÿbits C/C++ versionÿ16.00.30319.01 pour 80x86
+1>  Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+1>  
+1>  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTryCompileExec2165707284.dir\Debug\\" /Fd"C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec2165707284.pdb" /Gd /TP /analyze- /errorReport:prompt testCXXCompiler.cxx  /Zm1000 
+1>  
+1>  testCXXCompiler.cxx
+1>LinkEmbedManifest:
+1>  cmTryCompileExec2165707284.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec2165707284.exe
+1>FinalizeBuildStatus:
+1>  Suppression du fichier "cmTryCompileExec2165707284.dir\Debug\cmTryCompileExec2165707284.unsuccessfulbuild".
+1>  Mise … jour de l'horodatage "cmTryCompileExec2165707284.dir\Debug\cmTryCompileExec2165707284.lastbuildstate".
+1>
+1>La g‚n‚ration a r‚ussi.
+1>
+1>Temps ‚coul‚ 00:00:00.75
+========== G‚n‚rationÿ: 1 a r‚ussi, 0 a ‚chou‚, 0 mis … jour, 0 a ‚t‚ ignor‚ ==========
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/CMakeTmp
+
+Run Build Command:C:\PROGRA~2\MICROS~3.0\Common7\IDE\devenv.com CMAKE_TRY_COMPILE.sln /build Debug /project cmTryCompileExec1008843592
+
+Microsoft (R) Visual Studio Version 10.0.30319.1.
+Copyright (C) Microsoft Corp. Tous droits réservés.
+1>------ D‚but de la g‚n‚rationÿ: Projetÿ: cmTryCompileExec1008843592, Configurationÿ: Debug Win32 ------
+1>La g‚n‚ration a d‚marr‚ 07/03/2013 17:05:19.
+1>PrepareForBuild:
+1>  Cr‚ation du r‚pertoire "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\CMakeTmp\Debug\".
+1>InitializeBuildStatus:
+1>  Cr‚ation de "cmTryCompileExec1008843592.dir\Debug\cmTryCompileExec1008843592.unsuccessfulbuild", car "AlwaysCreate" a ‚t‚ sp‚cifi‚.
+1>ClCompile:
+1>  Compilateur d'optimisation Microsoft (R) 32ÿbits C/C++ versionÿ16.00.30319.01 pour 80x86
+1>  Copyright (C) Microsoft Corporation. Tous droits r‚serv‚s.
+1>  
+1>  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"cmTryCompileExec1008843592.dir\Debug\\" /Fd"C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/CMakeTmp/Debug/cmTryCompileExec1008843592.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\..\..\..\..\..\..\..\..\CMake 2.8\share\cmake-2.8\Modules\CMakeCXXCompilerABI.cpp"  /Zm1000 
+1>  
+1>  CMakeCXXCompilerABI.cpp
+1>LinkEmbedManifest:
+1>  cmTryCompileExec1008843592.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\CMakeFiles\CMakeTmp\Debug\cmTryCompileExec1008843592.exe
+1>FinalizeBuildStatus:
+1>  Suppression du fichier "cmTryCompileExec1008843592.dir\Debug\cmTryCompileExec1008843592.unsuccessfulbuild".
+1>  Mise … jour de l'horodatage "cmTryCompileExec1008843592.dir\Debug\cmTryCompileExec1008843592.lastbuildstate".
+1>
+1>La g‚n‚ration a r‚ussi.
+1>
+1>Temps ‚coul‚ 00:00:00.73
+========== G‚n‚rationÿ: 1 a r‚ussi, 0 a ‚chou‚, 0 mis … jour, 0 a ‚t‚ ignor‚ ==========
+
+
