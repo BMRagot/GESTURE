@@ -179,13 +179,7 @@ def splashscreen
 	
 	#test all component
 	
-	#save result
-	#log file??
-	
-	
- 	#transfert result
- 	
- 	
+ 		
  	#if user closes splashscreen???
  	puts $dlgSplashScreen.visible?
 
@@ -264,7 +258,9 @@ def menu
 		add_status("nomenv", $titlemodel.to_s + ".skp")
    		add_status("nbrobj", $number_obj.to_s)
 		
-				
+		#if test des errors....
+		#add_status("error",codeerror)
+		#end
    	}
 
 end
