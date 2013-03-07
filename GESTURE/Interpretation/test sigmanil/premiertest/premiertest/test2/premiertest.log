@@ -1,25 +1,18 @@
-﻿La génération a démarré 05/03/2013 17:20:48.
+﻿La génération a démarré 07/03/2013 09:07:57.
      1>Projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\premiertest.vcxproj" sur le nœud 2 (build cible(s)).
      1>InitializeBuildStatus:
          Mise à jour de l'horodatage "test2\premiertest.unsuccessfulbuild".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\OpenNI2\Include\\" /I"C:\Program Files\SigmaNILFramework\inc" /IC:\boost\boost_1_53_0 /Zi /nologo /W1 /WX- /O2 /Oy- /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"test2\\" /Fd"test2\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Driver.cpp" "..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Engine.cpp" "..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Event.cpp" "..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\FilteredValue.cpp" "..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\KinectSDKDriver.cpp" "..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\NIL.cpp" "..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\OpenNI2Driver.cpp" "..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\OpenNIDriver.cpp" main.cpp
-         Driver.cpp
-         Engine.cpp
-         Event.cpp
-         FilteredValue.cpp
-         KinectSDKDriver.cpp
-     1>c:\program files\sigmanilframework\src\KinectSDKDriver.h(28): fatal error C1083: Impossible d'ouvrir le fichier include : 'NuiApi.h' : No such file or directory
-         NIL.cpp
-     1>..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\NIL.cpp(23): fatal error C1083: Impossible d'ouvrir le fichier include : 'NILConfig.h' : No such file or directory
-         OpenNI2Driver.cpp
-     1>c:\program files\sigmanilframework\src\OpenNI2Driver.h(28): fatal error C1083: Impossible d'ouvrir le fichier include : 'NiTE.h' : No such file or directory
-         OpenNIDriver.cpp
-     1>c:\program files\sigmanilframework\src\OpenNIDriver.h(26): fatal error C1083: Impossible d'ouvrir le fichier include : 'XnCppWrapper.h' : No such file or directory
-         main.cpp
-         Génération de code en cours...
+         Toutes les sorties sont à jour.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\test2\premiertest.exe" /NOLOGO /LIBPATH:"C:\Program Files\SigmaNILFramework\lib" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\system\build\msvc-10.0\release\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\date_time\build\msvc-10.0\release\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\chrono\build\msvc-10.0\release\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\thread\build\msvc-10.0\release\link-static\threading-multi" /LIBPATH:C:\boost\boost_1_53_0\bin.v2\libs SigmaNIL_2.0_x64.lib /MANIFEST /ManifestFile:"test2\premiertest.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\test2\premiertest.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\test2\premiertest.lib" /MACHINE:X86 test2\main.obj
+            Création de la bibliothèque C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\test2\premiertest.lib et de l'objet C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\test2\premiertest.exp
+     1>main.obj : error LNK2019: symbole externe non résolu "public: __thiscall SigmaNIL::NIL::~NIL(void)" (??1NIL@SigmaNIL@@QAE@XZ) référencé dans la fonction _main
+     1>main.obj : error LNK2019: symbole externe non résolu "public: void __thiscall SigmaNIL::NIL::Init(enum SigmaNIL::DRIVER,enum SigmaNIL::DEVICE)" (?Init@NIL@SigmaNIL@@QAEXW4DRIVER@2@W4DEVICE@2@@Z) référencé dans la fonction _main
+     1>main.obj : error LNK2019: symbole externe non résolu "public: __thiscall SigmaNIL::NIL::NIL(void)" (??0NIL@SigmaNIL@@QAE@XZ) référencé dans la fonction _main
+     1>C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\test2\premiertest.exe : fatal error LNK1120: 3 externes non résolus
      1>Génération du projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\premiertest\premiertest\premiertest.vcxproj" terminée (build cible(s)) -- ÉCHEC.
 
 ÉCHEC de la build.
 
-Temps écoulé 00:00:41.45
+Temps écoulé 00:00:00.99

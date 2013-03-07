@@ -32,10 +32,31 @@
 				callRuby('GESTURE_INTERPRETATION', 'off');
 			}
 		});	
-		
-		update_console("helloqhdht:jngf bn,f bhfhjmdfhùthkot");
-		
+		update_console("hello ce message est trop grand pour rentrer dans cette petite fenetre");		
 	});
+	$(function(){
+	$('.ui-collapsible').bind('expand', function () {
+			if(this.id=='toolbar'){
+				callRuby('GESTURE_CONTROLRESIZE_P', '47');
+			}else if(this.id=='camera') {
+				callRuby('GESTURE_CONTROLRESIZE_P', '247');
+			}else if(this.id=='console') {
+				callRuby('GESTURE_CONTROLRESIZE_P', '27');
+			}else if(this.id=='repere') {
+				callRuby('GESTURE_CONTROLRESIZE_P', '160');
+			}
+		}).bind('collapse', function () {
+			if(this.id=='toolbar'){
+				callRuby('GESTURE_CONTROLRESIZE_N', '47');
+			}else if(this.id=='camera') {
+				callRuby('GESTURE_CONTROLRESIZE_N', '247');
+			}else if(this.id=='console') {
+				callRuby('GESTURE_CONTROLRESIZE_N', '27');
+			}else if(this.id=='repere') {
+				callRuby('GESTURE_CONTROLRESIZE_N', '160');
+			}
+		});
+		});
 	</script>
 	
 	
@@ -64,7 +85,6 @@
 		#flipbutton .ui-btn-inner{
 			padding: 0px;
 			//background-color:#ffffff;
-		
 		}
 		#flipbutton {
 			border:0px;
@@ -81,12 +101,10 @@
 		}
 		.ui-collapsible-heading{
 			font-size:9px
-		
 		}
 		.ui-btn, .ui-shadow, .ui-btn-corner-all, .ui-btn-inline, .ui-btn-icon-left, .ui-btn-up-c{
 			height:25px;
 		}
-		
 		#statut{
 			padding-top: 2px;
 			margin-top: 0px;
@@ -141,9 +159,10 @@
 		#info_content {
 			 white-space: nowrap;
 			 line-height: 20px;
-			 font-size: 20px;
+			 font-size: 15px;
+			 font-family: Arial;
 		}
-		#info_content p {
+		#info_content p{
 			padding: 0;
 		}	
 		/* Scoller Box */
@@ -159,7 +178,7 @@
 </head>
 <body>
 
-<div data-role="collapsible"  data-collapsed="false" data-theme="b" data-content-theme="b" data-inset="true" >
+<div id="toolbar" data-role="collapsible"  data-collapsed="false" data-theme="b" data-content-theme="b" data-inset="true" >
     <h3>Toolbar</h3>
    <div class="ui-grid-a">
         <div class="ui-block-a" style="text-align:center; vertical-align: middle;">
@@ -173,7 +192,7 @@
         </div><!-- /ui-block -->
 	</div>
 </div><!-- /collapsible -->
-<div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="b" data-inset="true" style="text-align:center;">
+<div id="camera" data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="b" data-inset="true" style="text-align:center;">
     <h3>Camera</h3>
     	<!-- Configure a few settings -->
 	<script language="JavaScript">
@@ -190,7 +209,7 @@
 		webcam.set_hook( 'onComplete', 'my_completion_handler' );
 	</script>
 </div><!-- /collapsible -->
-<div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="b" data-inset="true" style="text-align:center;">
+<div id="console" data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="b" data-inset="true" style="text-align:center;">
     <h3>Console</h3>
 	
 	<div id="console_container">
@@ -200,11 +219,11 @@
 	</div>
 	
 </div>
-<div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="b" data-inset="true" style="text-align:center;">
+<div id="repere" data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="b" data-inset="true" style="text-align:center;">
     <h3>Repère</h3>
 	<img src="images/repere.jpg" width="150px" height="150px"/>
 </div>
-<span id="width">helle</span>
+<span id="width">helle</span><!-- a laisser pour la taille de fenetre-->
 </body>
 
 </html>

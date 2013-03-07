@@ -121,11 +121,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='test2|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(OPENNI2_INCLUDE64);C:\Program Files\SigmaNILFramework\inc;C:\boost\boost_1_53_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Program Files\SigmaNILFramework\inc;C:\boost\boost_1_53_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Program Files\SigmaNILFramework\bin;C:\boost\boost_1_53_0\bin.v2\libs\system\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\date_time\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\chrono\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\thread\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SigmaNIL_2.0_x64.dll</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\SigmaNILFramework\lib;C:\boost\boost_1_53_0\bin.v2\libs\system\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\date_time\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\chrono\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs\thread\build\msvc-10.0\release\link-static\threading-multi;C:\boost\boost_1_53_0\bin.v2\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SigmaNIL_2.0_x64.lib</AdditionalDependencies>
       <ForceFileOutput>
       </ForceFileOutput>
       <RegisterOutput>true</RegisterOutput>
@@ -135,31 +135,7 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Driver.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Engine.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Event.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\FilteredValue.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\KinectSDKDriver.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\NIL.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\OpenNI2Driver.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\OpenNIDriver.cpp" />
     <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Defines.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Driver.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Engine.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Error.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Event.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Events.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\EventUserFollowAll.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\FilteredValue.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\HighResTime.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\KinectSDKDriver.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\Misc.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\NIL.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\OpenNI2Driver.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\..\..\Program Files\SigmaNILFramework\src\OpenNIDriver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -70,7 +70,7 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #DONE	#Demande d'enrgistrement avant de lancer le plugins?-->fonctionne uniquement pour les nouveax fichier pas pour les fichiers modifiés
 #DONE	#DEscription fichier 
 #DONE	#entete fichier html
-#		#recherche pour ejecter la webdialog
+#DONE	#recherche pour ejecter la webdialog
 #DONE	#creer fonction de log
 #		#code error
 #		#test du teuber
@@ -81,16 +81,20 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #DONE	#ranger file 
 #		#splashscreen image alternative
 #DONE	#regler taille fenetre splashscreen
-#		#bug UI msgBox: windows doesn't display option
-#		#REgler probleme de position
+#DONE	#bug UI msgBox: windows doesn't display option
+#DONE	#REgler probleme de position
 #		#creer un joli repere avec de quoi afficher les selections...
 #DONE	#définir position et format de la fenetre de control
 #DONE	#control UI:  defilement console
 #DONE	#control UI: prévoir la fonction d'ajout
 #DONE	#control UI: acvier le défilement uniquement si cela ne rentre pas....
 #DONE	#control UI: regler taille console
-#		#probleme du footer du menu principal
+#DONE	#probleme du footer du menu principal
 #		#detection fermeture des fenetres
+#DONE	#Police console
+#DONE	#Taille du control qui suit les retractions des modules
+#		#TCP
+#		#
 
 
 #############################################################
@@ -211,8 +215,7 @@ def menu
 	$dlgMenu.show
 	
 	$dlgMenu.add_action_callback("GESTURE_QUIT") {|dialog, params|
-	    result = UI.messagebox("You quit GESTURE "),MB_OKCANCEL
-		#BUG API sketchup non imlemente windaube
+	    result = UI.messagebox("You quit GESTURE ", MB_OKCANCEL)
 	    if result==1
 	     	$dlgMenu.close
 	     	#tuer le plugins????? TCP C++ y touti
@@ -304,6 +307,16 @@ def controlgesture
 		 end
 		 
    	}
+	
+	$dlgControl.add_action_callback("GESTURE_CONTROLRESIZE_P") {|dialog, params|
+		control_height = control_height+params.to_i
+		$dlgControl.set_size control_width, control_height
+	}
+	
+	$dlgControl.add_action_callback("GESTURE_CONTROLRESIZE_N") {|dialog, params|
+		control_height = control_height-params.to_i
+		$dlgControl.set_size control_width, control_height
+	}
 end
 def update_console(a)
 		script2 = 'update_console(\''+a+'\');'
@@ -321,7 +334,7 @@ def log(opt,data)
   $log_path="C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/log"
   if opt==1
 	#create new lo file
-	$log_name = "logesture_" + Time.now.day.to_s + Time.now.month.to_s + Time.now.year.to_s + Time.now.to_i.to_s + ".txt"
+	$log_name = "logesture_" + Time.now.year.to_s + Time.now.month.to_s + Time.now.day.to_s + Time.now.to_i.to_s + ".txt"
 	$log_file = File.open($log_path + '/' + $log_name,'a+') 
 	#add header
 	$log_file.puts("##########################################################################################" )
