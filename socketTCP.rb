@@ -27,12 +27,18 @@ def runsocket
 #	end
 #	s.close
 	   
-streamSock = TCPSocket.new( "127.0.0.1", 20000 )  
-streamSock.send( "Hello\n" )  
+#streamSock = TCPSocket.new( "127.0.0.1", 20000 )  
+#streamSock.send( "Hello\n" )  
 #str = streamSock.recv( 100 )  
 #print str  
-streamSock.close
-	  
+#streamSock.close
+
+include Socket::Constants
+socket = Socket.new( AF_INET, SOCK_STREAM, 0 )
+sockaddr = Socket.pack_sockaddr_in( 2000, '127.0.0.1' )
+socket.connect( sockaddr )
+
+
 #server = TCPServer.new('localhost', 20000)  
 #while(true) do  
 #  Thread.start(dts.accept) do |s|  

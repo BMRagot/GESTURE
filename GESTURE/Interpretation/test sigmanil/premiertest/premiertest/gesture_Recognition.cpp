@@ -11,11 +11,11 @@ GESTURE_Recognition::GESTURE_Recognition()
 	std::cout << nil.GetLastErrorString() << "\n";
 	
 	nil.GetDriver()->SetUserFollowMode(SigmaNIL::NEAREST);
-	
+	std::cout << "Initialize HandSegmentation Engine" << "\n";
 	// Initialize HandSegmentation Engine
 	engineHandSegmentation.Init(&nil, SigmaNIL::RIGHT);
 	engineHandSegmentation.Start();
-	
+	std::cout << "Initialize HandShape Engine" << "\n";
 	// Initialize HandShape Engine
 	std::string forestFileName("Data/ASL_T12_LH_SCR_98.9%_PPCR_86.8%.cforest");
 	engineHandShape.Init( "Sigma", "A6E443852ED4FBB52D59D7B9146718D08E29F665", &nil, &engineHandSegmentation, forestFileName, SigmaNIL::RIGHT, 0.88, 0.25);

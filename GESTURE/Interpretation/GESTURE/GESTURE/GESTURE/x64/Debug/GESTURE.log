@@ -1,0 +1,21 @@
+﻿La génération a démarré 11/03/2013 13:27:28.
+     1>Projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\GESTURE\GESTURE.vcxproj" sur le nœud 2 (build cible(s)).
+     1>InitializeBuildStatus:
+         Mise à jour de l'horodatage "x64\Debug\GESTURE.unsuccessfulbuild".
+       ClCompile:
+         Toutes les sorties sont à jour.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\x64\Debug\GESTURE.exe" /NOLOGO /LIBPATH:"C:\Program Files\SigmaNILFramework\lib" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\chrono\build\msvc-10.0\release\address-model-64\architecture-x86\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\date_time\build\msvc-10.0\release\address-model-64\architecture-x86\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\system\build\msvc-10.0\release\address-model-64\architecture-x86\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\thread\build\msvc-10.0\release\address-model-64\architecture-x86\link-static\threading-multi" SigmaNIL_2.0_x64.lib HandSegmentationEngine_nil2.0_2.0_x64.lib HandShapeEngine_nil2.0_2.0_x64.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\GESTURE.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\x64\Debug\GESTURE.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\x64\Debug\GESTURE.lib" /MACHINE:X64 x64\Debug\GESTURE_Recognition.obj
+         x64\Debug\main.obj
+            Création de la bibliothèque C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\x64\Debug\GESTURE.lib et de l'objet C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\x64\Debug\GESTURE.exp
+         GESTURE.vcxproj -> C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\x64\Debug\GESTURE.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\x64\Debug\GESTURE.exe;#1" /manifest x64\Debug\GESTURE.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Suppression du fichier "x64\Debug\GESTURE.unsuccessfulbuild".
+         Mise à jour de l'horodatage "x64\Debug\GESTURE.lastbuildstate".
+     1>Génération du projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\GESTURE\GESTURE.vcxproj" terminée (build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:00.91

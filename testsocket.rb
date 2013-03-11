@@ -7,12 +7,12 @@ require 'GESTURE/Control/socket.so'
 UI.menu("Plugins").add_item("socket...") {
   
   #call Splash Screen function to load resources
-  runsocket
+  runsocket1
   
 }
 
 
-def runsocket
+def runsocket1
 createserver
 createclient
 end
