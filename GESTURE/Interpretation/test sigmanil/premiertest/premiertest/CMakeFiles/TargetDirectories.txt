@@ -1,3 +1,0 @@
-C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/ALL_BUILD.dir
-C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/ZERO_CHECK.dir
-C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/test sigmanil/premiertest/premiertest/CMakeFiles/premiertest.dir
