@@ -1,0 +1,16 @@
+﻿Build started 11/03/2013 18:22:13.
+     1>Project "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\GESTURE.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "x64\Debug\GESTURE.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Program Files\SigmaNILFramework\inc" /IC:\boost\boost_1_53_0 /IC:\Qt\4.8.4\include /Zi /nologo /W1 /WX- /O2 /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt GESTURE_Recognition.cpp main.cpp
+         GESTURE_Recognition.cpp
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\gesture\gesture\GESTURE_Recognition.h(4): fatal error C1083: Cannot open include file: 'QtGui/QMainWindow': No such file or directory
+         main.cpp
+     1>c:\program files (x86)\google\google sketchup 8\plugins\gesture\interpretation\gesture\gesture\GESTURE_Recognition.h(4): fatal error C1083: Cannot open include file: 'QtGui/QMainWindow': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\GESTURE.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:19.25
