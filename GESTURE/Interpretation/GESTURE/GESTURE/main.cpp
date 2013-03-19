@@ -1,19 +1,23 @@
-
-#include <QtCore/QCoreApplication>
+//#define DllExport
 #include "GESTURE_Recognition.h"
 #include <iostream>
 #include <string>
-#include <QtGui/QApplication>
+//#define _SECURE_SCL 0 //-D_SCL_SECURE_NO_WARNINGS
+
+
 int main(int argc, char *argv[])
 {
-
 	std::cout << "Demarrage du programme \n";
-	QApplication a(argc, argv);
-	GESTURE_Recognition w;
-	w.show();
-	return a.exec();
-
-	//QCoreApplication a(argc, argv);
-
-	//return a.exec();
+	//déclaration des variables
+	GESTURE_Recognition::GESTURE_Recognition() ;
 }
+
+
+
+	//std::cout << nil.GetLastErrorString();
+	
+	//int i;
+	//std::cin>> i ;
+
+	//return 0;
+//}

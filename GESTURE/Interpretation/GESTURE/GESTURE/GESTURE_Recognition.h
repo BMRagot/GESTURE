@@ -12,7 +12,7 @@ class GESTURE_Recognition : public QMainWindow
 {
 	Q_OBJECT
 public:
-	GESTURE_Recognition(QWidget *parent = 0, Qt::WFlags flags = 0);
+	GESTURE_Recognition();
 	~GESTURE_Recognition();
 
 public slots:

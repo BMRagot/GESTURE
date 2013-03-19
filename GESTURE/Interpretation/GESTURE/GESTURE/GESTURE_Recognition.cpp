@@ -1,7 +1,7 @@
 #include "GESTURE_Recognition.h"
 
 
-GESTURE_Recognition::GESTURE_Recognition(QWidget *parent, Qt::WFlags flags)
+GESTURE_Recognition::GESTURE_Recognition()
 {
 	isHandShapeEventReceived=false;
 

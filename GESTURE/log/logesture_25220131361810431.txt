@@ -1,7 +1,0 @@
-###############################################
-				GESTURE Plugins 
-					Log File
-Start plugins :Mon Feb 25 17:40:31 +0100 2013
-						Gesture 2013 Copyright
-###############################################
-hbklbf
