@@ -104,7 +104,7 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #############################################################
 def splashscreen
 	
-	UI.openURL("GESTURE\Interpretation\test sigmanil\TCP\TCPserver\Debug\TCPserver.exe")
+	#UI.openURL("GESTURE\Interpretation\test sigmanil\TCP\TCPserver\Debug\TCPserver.exe")
 	
 	progressbar_score = 0
 	
