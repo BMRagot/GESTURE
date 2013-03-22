@@ -26,7 +26,8 @@ int GESTURE_Server::initServer()
              
         /* Configuration */
 		recsize = sizeof(sin);
-        sin.sin_addr.s_addr = htonl(INADDR_ANY);  /* Adresse IP automatique */
+        //sin.sin_addr.s_addr = htonl(INADDR_ANY);  /* Adresse IP automatique */
+		sin.sin_addr.s_addr = inet_addr("127.0.0.1");
         sin.sin_family = AF_INET;                 /* Protocole familial (IP) */
         sin.sin_port = htons(PORT);               /* Listage du port */
         sock_err = bind(ListenSock, (SOCKADDR*)&sin, recsize);

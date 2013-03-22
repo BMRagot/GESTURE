@@ -17,6 +17,9 @@ public:
 	void closeConnection();
 	bool sendData(const char* mixedData, int dataSize);
 
+	SOCKET GetListenSocket(){return ListenSock;};
+	SOCKET GetClientSocket(){return ClientSock;};
+
 	WSADATA WSAData;
 	SOCKADDR_IN sin;
     SOCKET ListenSock;

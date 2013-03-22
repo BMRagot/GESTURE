@@ -36,13 +36,17 @@ def runsocket
 include Socket::Constants
 socket = Socket.new( AF_INET, SOCK_STREAM, 0 )
 sockaddr = Socket.pack_sockaddr_in( 2000, '127.0.0.1' )
-int errno = socket.connect( sockaddr )
-puts errno
+socket.connect( sockaddr )
+
+socket.puts(Time.now) 
 
 Thread.new{
 puts "new thread start"
+#socket.read
+
 while line = socket.gets   # Read lines from the socket
   puts "in the line"
+  
   puts line.chop      # And print with platform line terminator
 end
 }
