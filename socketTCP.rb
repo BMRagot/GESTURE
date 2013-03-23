@@ -27,21 +27,27 @@ def runsocket
 #	end
 #	s.close
 	   
-streamSock = TCPSocket.open($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
+$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
  
 puts "Connection established"
 
 #streamSock.send( "Hello\n" ) 
-Thread.new{
+#Thread.new{
 	puts "new thread start"
-	while (true)
-		puts "ff"
-		str = streamSock.recv( 32 )
-		print str  
-	end
-	streamSock.close
+	loop{
+	#while line = $streamSock.gets   # Read lines from the socket
+	#	puts line.chop      # And print with platform line terminator
+	#end
+#while (str = $streamSock.recv(2))
+#		puts "ff"
+		strr = $streamSock.read(32)
+		#str = $streamSock.recv(32)
+		puts strr  
+		}
+#	end
+	#$streamSock.close
 	puts "Socket closed"
-}
+##}
 #include Socket::Constants
 #$socket = Socket.new( AF_INET, SOCK_STREAM, 0 )
 #sockaddr = Socket.pack_sockaddr_in( 2000, '127.0.0.1' )

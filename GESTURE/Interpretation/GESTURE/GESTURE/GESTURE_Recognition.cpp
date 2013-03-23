@@ -247,8 +247,8 @@ void GESTURE_Recognition::HandShapeEventHandler( NIL_EVENT e )
 	 const char* gesture= (const char*)&(oss.str());
 	 long dataSize = sizeof(gesture);
 	 
-	bool isClientConnected1 = Sock.sendData(gesture,dataSize);
-	
+	//bool isClientConnected1 = Sock.sendData(gesture,dataSize);
+	bool isClientConnected1 = Sock.sendData("envoie dinfo",32);
 	std::cout << oss.str()  << "\n" ;
 	std::cout << gesture  << "\n" ;
 	std::cout << "datasize" <<dataSize << "\n";

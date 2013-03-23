@@ -1,4 +1,4 @@
-﻿La génération a démarré 23/03/2013 14:55:23.
+﻿La génération a démarré 23/03/2013 16:14:31.
      1>Projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\GESTURE\GESTURE.vcxproj" sur le nœud 2 (build cible(s)).
      1>InitializeBuildStatus:
          Création de "x64\Release\GESTURE.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
@@ -6,10 +6,8 @@
          Toutes les sorties sont à jour.
        ClCompile:
          Toutes les sorties sont à jour.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I. /IC:\Qt\4.8.4\include /I.\GeneratedFiles\Release /IC:\Qt\4.8.4\include\QtCore /IC:\Qt\4.8.4\include\QtGui /I"C:\Program Files\SigmaNILFramework\inc" /IC:\boost\boost_1_53_0 /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc100.pdb" /Gd /TP /errorReport:prompt GESTURE_Server.cpp main.cpp
-         GESTURE_Server.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I. /IC:\Qt\4.8.4\include /I.\GeneratedFiles\Release /IC:\Qt\4.8.4\include\QtCore /IC:\Qt\4.8.4\include\QtGui /I"C:\Program Files\SigmaNILFramework\inc" /IC:\boost\boost_1_53_0 /nologo /W1 /WX- /O2 /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc100.pdb" /Gd /TP /errorReport:prompt main.cpp
          main.cpp
-         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\x64\Release\\GESTURE.exe" /NOLOGO /LIBPATH:C:\Qt\4.8.4\lib /LIBPATH:"C:\Program Files\SigmaNILFramework\lib" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\chrono\build\msvc-10.0\release\address-model-64\architecture-x86\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\date_time\build\msvc-10.0\release\address-model-64\architecture-x86\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\system\build\msvc-10.0\release\address-model-64\architecture-x86\link-static\threading-multi" /LIBPATH:"C:\boost\boost_1_53_0\bin.v2\libs\thread\build\msvc-10.0\release\address-model-64\architecture-x86\link-static\threading-multi" ws2_32.lib qtmain.lib QtCore4.lib QtGui4.lib SigmaNIL_2.0_x64.lib HandSegmentationEngine_nil2.0_2.0_x64.lib HandShapeEngine_nil2.0_2.0_x64.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Release\GESTURE.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\x64\Release\GESTURE.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\GESTURE\x64\Release\GESTURE.lib" /MACHINE:X64 x64\Release\qrc_GESTURE_Recognition.obj
          x64\Release\moc_GESTURE_Recognition.obj
@@ -27,4 +25,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:10.57
+Temps écoulé 00:00:07.97

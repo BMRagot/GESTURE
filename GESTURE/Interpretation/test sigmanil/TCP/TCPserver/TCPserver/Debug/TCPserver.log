@@ -1,4 +1,4 @@
-﻿La génération a démarré 01/03/2013 17:10:33.
+﻿La génération a démarré 23/03/2013 16:38:04.
      1>Projet "C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPserver\TCPserver\TCPserver.vcxproj" sur le nœud 2 (build cible(s)).
      1>InitializeBuildStatus:
          Création de "Debug\TCPserver.unsuccessfulbuild", car "AlwaysCreate" a été spécifié.
@@ -6,10 +6,11 @@
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt mainserver.cpp
          mainserver.cpp
        ManifestResourceCompile:
-         Toutes les sorties sont à jour.
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\TCPserver.exe.embed.manifest.res" Debug\TCPserver_manifest.rc 
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPserver\Debug\TCPserver.exe" /INCREMENTAL /NOLOGO ws2_32.lib /MANIFEST /ManifestFile:"Debug\TCPserver.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPserver\Debug\TCPserver.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPserver\Debug\TCPserver.lib" /MACHINE:X86 Debug\TCPserver.exe.embed.manifest.res
          Debug\mainserver.obj
+         LINK : C:\Program Files (x86)\Google\Google SketchUp 8\Plugins\GESTURE\Interpretation\test sigmanil\TCP\TCPserver\Debug\TCPserver.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
        Manifest:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\TCPserver.exe.embed.manifest" /manifest Debug\TCPserver.exe.intermediate.manifest
          Toutes les sorties sont à jour.
@@ -23,4 +24,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:02.25
+Temps écoulé 00:00:03.69

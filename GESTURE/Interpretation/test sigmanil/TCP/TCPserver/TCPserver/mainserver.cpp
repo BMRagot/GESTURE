@@ -3,6 +3,7 @@
 typedef int socklen_t;
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
 #define PORT 2000
 
 
@@ -80,6 +81,7 @@ int main(void)
             printf("Fermeture de la socket serveur\n");
             closesocket(sock);
             printf("Fermeture du serveur terminée\n");
+			std::cout << "Fermeture du serveur terminée\n" << std::endl;
         }
         else
            perror("socket");
