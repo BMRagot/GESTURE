@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 			//if(recv(KSock.GetListenSocket(), buffer, 32, 0) != SOCKET_ERROR)
 				//		printf("Recu : %s\n", buffer);
 
-			int e=send(KSock.GetClientSocket(),"hello",2333,0);
+			int e=send(KSock.GetClientSocket(),"hello",32,0);
 			std::cout <<e<< "\n";
 		}
 		

@@ -27,30 +27,39 @@ def runsocket
 #	end
 #	s.close
 	   
-#streamSock = TCPSocket.new( "127.0.0.1", 20000 )  
-#streamSock.send( "Hello\n" )  
-#str = streamSock.recv( 100 )  
-#print str  
-#streamSock.close
+streamSock = TCPSocket.open($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
+ 
+puts "Connection established"
 
-include Socket::Constants
-$socket = Socket.new( AF_INET, SOCK_STREAM, 0 )
-sockaddr = Socket.pack_sockaddr_in( 2000, '127.0.0.1' )
-$socket.connect( sockaddr )
-
-$socket.write(Time.now) 
-
-
+#streamSock.send( "Hello\n" ) 
 Thread.new{
-puts "new thread start"
-$socket.read
-
-while line = $socket.read   # Read lines from the socket
-  puts "in the line"
-  
-  puts line.chop      # And print with platform line terminator
-end
+	puts "new thread start"
+	while (true)
+		puts "ff"
+		str = streamSock.recv( 32 )
+		print str  
+	end
+	streamSock.close
+	puts "Socket closed"
 }
+#include Socket::Constants
+#$socket = Socket.new( AF_INET, SOCK_STREAM, 0 )
+#sockaddr = Socket.pack_sockaddr_in( 2000, '127.0.0.1' )
+#$socket.connect( sockaddr )
+
+
+
+#wrote= $socket.write(Time.now) 
+#puts wrote
+
+#Thread.new{
+#puts "new thread start"
+#puts $socket.read
+#puts "3"
+#while line = $socket.read   # Read lines from the socket
+ # puts "in the line"
+  #puts line.chop      # And print with platform line terminator
+#end#}
 #server = TCPServer.new('localhost', 20000)  
 #while(true) do  
 #  Thread.start(dts.accept) do |s|  
