@@ -11,7 +11,7 @@ runsocket
 $hostname = 'localhost'
 $port = 2000
 
-               # Close the socket when done
+# Close the socket when done
 
 
 def runsocket
@@ -26,13 +26,17 @@ def runsocket
 #		puts line.chop      # And print with platform line terminator
 #	end
 #	s.close
-	   
+ 
 $streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
  
 puts "Connection established"
 
+$data = []
+$model = Sketchup.active_model
+$view = $model.active_view
 #streamSock.send( "Hello\n" ) 
-#Thread.new{
+	Thread.new{  
+#UI.start_timer(0,false){
 	puts "new thread start"
 	loop{
 	#while line = $streamSock.gets   # Read lines from the socket
@@ -40,14 +44,42 @@ puts "Connection established"
 	#end
 #while (str = $streamSock.recv(2))
 #		puts "ff"
-		strr = $streamSock.read(32)
+		$strr = $streamSock.read(120)
 		#str = $streamSock.recv(32)
-		puts strr  
+		$data << $strr  
+		puts $strr
+		$order=$strr.split('/')
+		puts $order[0]
+		if ($order[0]=="B")
+			c=0
+			a =$order[1].to_f/4.8#-$model.active_entities[0].transformation.to_a[13]
+			b =$order[2].to_f/6.4 #-$model.active_entities[0].transformation.to_a[14]
+			#c =$order[3].to_f#-$model.active_entities[0].transformation.to_a[15]
+			new_transformation = Geom::Transformation.new([a,b,c])
+			$model.active_entities[0].move! new_transformation
+			
+			refreshed_view = $view.refresh
+		end
 		}
 #	end
 	#$streamSock.close
 	puts "Socket closed"
-##}
+}
+
+UI.start_timer(0,false){
+#Thread.new{
+	log(1,"")
+loop{
+	log(2,$strr)
+	puts $data
+	
+	
+	}
+}
+
+
+
+
 #include Socket::Constants
 #$socket = Socket.new( AF_INET, SOCK_STREAM, 0 )
 #sockaddr = Socket.pack_sockaddr_in( 2000, '127.0.0.1' )
@@ -85,6 +117,40 @@ puts "Connection established"
 
 
 end 
+
+def move_copy( component, distance )
+
+=begin
+Creates an outer array, moving a component "distance" as many times as
+specified.
+
+"distance" is a vector, an array of [r, g, b].
+
+"number_of_copies" is like the "Nx" in the VCB after a Move/Copy.
+For 15 steps, you make 14 copies.
+=end
+
+    ents = Sketchup.active_model.entities[component]
+
+    #defi = component.definition # the original component's definition
+    #trans = component.transformation # the original's transformation
+    trans = ents.transformation
+	pt = trans.origin # the original's location, a Point3d
+
+  
+        pt += distance
+            # add vector to Point3d getting new Point3d
+        trans = Geom::Transformation.new( pt )
+            # create new Transformation at the new Point3d
+        ents=ents*trans
+		#ents.add_instance( defi, trans )
+            # add another instance at the new Point3d
+   
+
+end # of move_copy()
+
+
+
 
 def socket_listener(v) 
       if v[0..2] == "RDY" 

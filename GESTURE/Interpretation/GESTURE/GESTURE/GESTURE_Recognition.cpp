@@ -12,6 +12,7 @@
 #include "GESTURE_Recognition.h"
 #include <QPainter>
 
+
 #define RED 0
 #define GREEN 1
 #define BLUE 2
@@ -242,14 +243,32 @@ void GESTURE_Recognition::HandShapeEventHandler( NIL_EVENT e )
 	
 	std::cout << "geste: "<<label << "/" << a <<"\n";
 
-	 std::ostringstream oss;
-	 oss<<label << "/"<< handPosition2D.x <<"/" << handPosition2D.y <<"/" << handPosition2D.z;
-	 const char* gesture= (const char*)&(oss.str());
-	 long dataSize = sizeof(gesture);
-	 
-	//bool isClientConnected1 = Sock.sendData(gesture,dataSize);
-	bool isClientConnected1 = Sock.sendData("envoie dinfo",32);
+	std::ostringstream oss;
+	oss<<label << "/"<< handPosition2D.x <<"/" << handPosition2D.y <<"/" << handPosition2D.z;
+	const char* gesture= (const char*)&(oss.str());
+	long dataSize = sizeof(gesture);
+	
+
+char buffer[120];
+for (int a=0;a<=120;a++)
+        {
+            buffer[a]=oss.str()[a];
+}
+
+
+	//std::string s = oss.str();
+
+	//char *un= s.c_str();
+	//char gesture[32] ;
+	//gesture=label.str() ;
+	
+	 //std::string gesture="/"+ handPosition2D.x.str() +"/" + handPosition2D.y +"/" + handPosition2D.z;
+		 //gesture =s.toCharArray();
+		// label<< "/"<< handPosition2D.x <<"/" << handPosition2D.y <<"/" << handPosition2D.z;
+	bool isClientConnected1 = Sock.sendData(buffer,120);
+	//bool isClientConnected2 = Sock.sendData("envoie dinfo",32);
 	std::cout << oss.str()  << "\n" ;
+	std::cout << buffer  << "\n" ;
 	std::cout << gesture  << "\n" ;
 	std::cout << "datasize" <<dataSize << "\n";
 	std::cout << "Send?"<<  isClientConnected1 << "\n";

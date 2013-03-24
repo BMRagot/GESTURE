@@ -15,7 +15,7 @@
 //#include <iostream>
 
 
-char buffer[32] = "";
+char buffer[120] = "";
 
 int main(int argc, char *argv[])
 {
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 			//if(recv(KSock.GetListenSocket(), buffer, 32, 0) != SOCKET_ERROR)
 				//		printf("Recu : %s\n", buffer);
 			 char buffer[32]="hello";
-			int e=send(KSock.GetClientSocket(),buffer,32,0);
+			int e=send(KSock.GetClientSocket(),buffer,120,0);
 			std::cout <<e<< "\n";
 		}
 		
