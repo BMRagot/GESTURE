@@ -57,6 +57,7 @@ public:
 	GESTURE_Server Sock;//const;
 	//GESTURE_Server GetSock(){return Sock;};
 	void SetSock( GESTURE_Server newSock){Sock=newSock;};
+	void closeEvent( QCloseEvent * event );
 
 public slots:
 	void Run();
@@ -83,6 +84,7 @@ private:
 
 	QString recognizedLetter;
 	vec3 handPosition2D;
+	vec3 handPosition2Dmem;
 
 	Box2D handRect;
 

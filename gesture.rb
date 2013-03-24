@@ -25,6 +25,7 @@
 # First we pull in the standard API hooks.
 require 'sketchup.rb'
 require 'loadpath.rb'
+require $LOAD_PATH[3]+'/socket.so'
 
 #############################################################
 #					DEVELOPMENT								#
@@ -137,7 +138,7 @@ def splashscreen
 		#useless
 		#splashscreen_video=message.to_i
 		# just +1 to update
-		progressbar_score = progressbar_score + 90
+		progressbar_score = progressbar_score + 70
 		update_progress(progressbar_score)
 	end
 
@@ -160,6 +161,8 @@ def splashscreen
 	#log(2,"###SketchUp Object")
 	log(2,'SU Version: '+$SUversion.to_s)
 	##lo
+	progressbar_score = progressbar_score + 10
+	update_progress(progressbar_score)
 	
 	#Ruby resources
 	$rb=RUBY_VERSION
@@ -175,9 +178,36 @@ def splashscreen
 	progressbar_score = progressbar_score + 10
 	update_progress(progressbar_score)
 	
-	# Create TCPServer
+
 	
 	# Load C++ module
+	idCpp=UI.start_timer(0,false){
+		$CppLaunch = UI.openURL("C:/Program Files (x86)/Google/Google SketchUp 8/Plugins/GESTURE/Interpretation/GESTURE/x64/Release/GESTURE.exe")
+	}
+	if $CppLaunch 
+		log(2,"Load GESTURE.exe: OK")
+	else
+		log(2,"Load GESTURE.exe: NOT OK")
+	end
+	progressbar_score = progressbar_score + 10
+	update_progress(progressbar_score)
+	
+	# Create TCPServer
+	$hostname = 'localhost'
+	$port = 2000
+	puts "Establishing a connection..."
+	$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
+	puts "Connection established"
+	while ($streamSock == nil)
+		$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
+	end
+	if $streamSock != nil
+		$SocketTest=true
+		
+	else
+		$SocketTest=true
+	end
+	
 	
 	#test all component
 	
@@ -251,7 +281,9 @@ def menu
    	$dlgMenu.add_action_callback("MENU_READY") {|dialog, params|
    		# Get all Status
    		add_status("Kinect","NOK")
-   		
+   		if $CppLaunch
+			add_status("CppGesture","OK")
+		end
    		
    		add_status("versionSU", $SUversion.to_f.to_s)
    		if $rbres
@@ -259,6 +291,7 @@ def menu
 		end
 		add_status("nomenv", $titlemodel.to_s + ".skp")
    		add_status("nbrobj", $number_obj.to_s)
+		
 		
 		#if test des errors....
 		#add_status("error",codeerror)

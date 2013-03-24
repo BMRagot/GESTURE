@@ -16,10 +16,6 @@ $port = 2000
 
 def runsocket
       puts "Establishing a connection..."
-     # SKSocket.connect('127.0.0.1', 2000) 
-      #puts "Connection established."
-      #SKSocket.add_socket_listener { |e| socket_listener(e) } 
-	  
 #	s = TCPSocket.open(host, port)
 #	puts "Connection established."
 #	while line = s.gets   # Read lines from the socket
@@ -28,58 +24,83 @@ def runsocket
 #	s.close
  
 
- 
-puts "Connection established"
 
 $data = []
 $model = Sketchup.active_model
 $view = $model.active_view
+$number_obj = $model.active_entities.length
 $strr= "0"
+
 #streamSock.send( "Hello\n" ) 	$t1=Thread.new{  
-	$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
+
+$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
+puts "Connection established"
 id=UI.start_timer(0,false){
 	puts "new thread start"
+	old= nil
+	tomove=0
 	loop{
-	#while line = $streamSock.gets   # Read lines from the socket
-	#	puts line.chop      # And print with platform line terminator
-	#end
-#while (str = $streamSock.recv(2))
-#		puts "ff"
-		
 		$mem = $streamSock.read(120)
 		#strr = $streamSock.recv(120)
 		if ($mem != $strr)
 			$strr=$mem
 			$data << $strr  
-			puts "t1"
-			puts $strr
 		end
 		
 		$order=$strr.split('/')
 		puts $order[0]
-		if ($order[0]=="B")
-			c=0
-			a =$order[1].to_f/4.8#-$model.active_entities[0].transformation.to_a[13]
-			b =$order[2].to_f/6.4 #-$model.active_entities[0].transformation.to_a[14]
-			#c =$order[3].to_f#-$model.active_entities[0].transformation.to_a[15]
-			new_transformation = Geom::Transformation.new([a,b,c])
-			$model.active_entities[0].move! new_transformation
-			
-			refreshed_view = $view.refresh
-		end
 		
-		}
-#	end
-	#$streamSock.close
+		nex2=1000000
+		if($order[0]=="B" && old=="A")
+			for i in 1..$number_obj-1
+				nex1=$model.active_entities[0].transformation.to_a[13..15].distance $model.active_entities[i].transformation.to_a[13..15]
+				if (nex1<nex2)
+					toselect=i
+					nex2=nex1
+				end
+			end
+			$model.active_entities[0].visible=false
+			vector = Geom::Vector3d.new 0,0,0
+			t = Geom::Transformation.translation vector
+			$model.active_entities[0].move!(t)
+			tomove=toselect
+		elsif ($order[0]=="A" && old=="B")
+			$model.active_entities[0].visible=true
+			tomove=0
+		
+		elsif ($order[0]=="B" && old=="B")
+			a = $order[1].to_f/4.8 
+			b = -$order[2].to_f/6.4
+			c = $order[3].to_f/10
+			vector = Geom::Vector3d.new a,b,c
+			t = Geom::Transformation.translation vector
+			$model.active_entities[tomove].transform! (t)
+			refreshed_view = $view.refresh
+		elsif($order[0]=="A" && old=="A")
+			a = $order[1].to_f/4.8 
+			b = -$order[2].to_f/6.4
+			c = $order[3].to_f/10
+			vector = Geom::Vector3d.new a,b,c
+			t = Geom::Transformation.translation vector
+			$model.active_entities[0].transform! t
+			refreshed_view = $view.refresh
+		
+		elsif ($order[0].include? "QUIT")
+			break
+			UI.stop_timer(id)
+		end
+		old=$order[0]
+	}
+	$streamSock.close
 	puts "Socket closed"
 }
-$t1.abort_on_exception = true
-UI.start_timer(0,false){
+#$t1.abort_on_exception = true
+#UI.start_timer(0,false){
 #$t2=Thread.new{
-loop{
-	refreshed_view = $view.refresh
-}
-}
+#loop{
+#	refreshed_view = $view.refresh
+##}
+##}
 #$t2.abort_on_exception = true
 #UI.start_timer(0,false){
 
@@ -98,80 +119,6 @@ loop{
 #$socket = Socket.new( AF_INET, SOCK_STREAM, 0 )
 #sockaddr = Socket.pack_sockaddr_in( 2000, '127.0.0.1' )
 #$socket.connect( sockaddr )
-
-
-
-#wrote= $socket.write(Time.now) 
-#puts wrote
-
-#Thread.new{
-#puts "new thread start"
-#puts $socket.read
-#puts "3"
-#while line = $socket.read   # Read lines from the socket
- # puts "in the line"
-  #puts line.chop      # And print with platform line terminator
-#end#}
-#server = TCPServer.new('localhost', 20000)  
-#while(true) do  
-#  Thread.start(dts.accept) do |s|  
-#    print(s, " is accepted\n")  
-#    s.write(Time.now)  
-#    print(s, " is gone\n")  
-#    s.close  
-#  end  
-#end  
-
-#while (client!=nil) do
-#  client = server.accept    # Wait for a client to connect
-#  client.puts "Hello !"
-#  client.puts "Time is #{Time.now}"
-#  client.close
-#end
-
+ 
 
 end 
-
-def move_copy( component, distance )
-
-=begin
-Creates an outer array, moving a component "distance" as many times as
-specified.
-
-"distance" is a vector, an array of [r, g, b].
-
-"number_of_copies" is like the "Nx" in the VCB after a Move/Copy.
-For 15 steps, you make 14 copies.
-=end
-
-    ents = Sketchup.active_model.entities[component]
-
-    #defi = component.definition # the original component's definition
-    #trans = component.transformation # the original's transformation
-    trans = ents.transformation
-	pt = trans.origin # the original's location, a Point3d
-
-  
-        pt += distance
-            # add vector to Point3d getting new Point3d
-        trans = Geom::Transformation.new( pt )
-            # create new Transformation at the new Point3d
-        ents=ents*trans
-		#ents.add_instance( defi, trans )
-            # add another instance at the new Point3d
-   
-
-end # of move_copy()
-
-
-
-
-def socket_listener(v) 
-      if v[0..2] == "RDY" 
-        puts "Sending version..."
-        SKSocket.write "1:12".ljust(11) 
-        puts "Version sent."
-      end 
-end 
-	
-

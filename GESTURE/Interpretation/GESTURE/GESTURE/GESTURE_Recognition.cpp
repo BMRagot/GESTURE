@@ -114,6 +114,13 @@ GESTURE_Recognition::~GESTURE_Recognition()
 	delete timer;
 }
 
+
+void GESTURE_Recognition::closeEvent ( QCloseEvent * event ){
+	std::cout<<"User quit the application"<<std::endl;
+	Sock.sendData("QUIT",120);
+}
+
+
 void GESTURE_Recognition::paintEvent( QPaintEvent* )
 {
 	int i;
@@ -203,6 +210,8 @@ void GESTURE_Recognition::DriverEventHandler( NIL_EVENT e )
 	if( driverEvent->activeUser != NULL )
 		userActiveHand = driverEvent->activeUser->activeHand;
 	
+	handPosition2Dmem = handPosition2D;
+
 	vec3 handPosition3D = driverEvent->handPosition[RIGHT];
 	handPosition2D = nil.GetDriver()->ConvertWorldToScreen(handPosition3D);
 	handPosition2D.y = 480-handPosition2D.y;
@@ -243,8 +252,13 @@ void GESTURE_Recognition::HandShapeEventHandler( NIL_EVENT e )
 	
 	std::cout << "geste: "<<label << "/" << a <<"\n";
 
+	
 	std::ostringstream oss;
-	oss<<label << "/"<< handPosition2D.x <<"/" << handPosition2D.y <<"/" << handPosition2D.z;
+	//transmission abolue
+	//oss<<label << "/"<< handPosition2D.x <<"/" << handPosition2D.y <<"/" << handPosition2D.z;
+	//transmission incrementale
+	oss<<label << "/" <<handPosition2D.x-handPosition2Dmem.x <<"/" << handPosition2D.y-handPosition2Dmem.y <<"/" << handPosition2D.z-handPosition2Dmem.z << "/"<< handPosition2D.x <<"/" << handPosition2D.y <<"/" << handPosition2D.z;
+	
 	const char* gesture= (const char*)&(oss.str());
 	long dataSize = sizeof(gesture);
 	
