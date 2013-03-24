@@ -27,16 +27,17 @@ def runsocket
 #	end
 #	s.close
  
-$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
+
  
 puts "Connection established"
 
 $data = []
 $model = Sketchup.active_model
 $view = $model.active_view
-#streamSock.send( "Hello\n" ) 
-	Thread.new{  
-#UI.start_timer(0,false){
+$strr= "0"
+#streamSock.send( "Hello\n" ) 	$t1=Thread.new{  
+	$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
+id=UI.start_timer(0,false){
 	puts "new thread start"
 	loop{
 	#while line = $streamSock.gets   # Read lines from the socket
@@ -44,10 +45,16 @@ $view = $model.active_view
 	#end
 #while (str = $streamSock.recv(2))
 #		puts "ff"
-		$strr = $streamSock.read(120)
-		#str = $streamSock.recv(32)
-		$data << $strr  
-		puts $strr
+		
+		$mem = $streamSock.read(120)
+		#strr = $streamSock.recv(120)
+		if ($mem != $strr)
+			$strr=$mem
+			$data << $strr  
+			puts "t1"
+			puts $strr
+		end
+		
 		$order=$strr.split('/')
 		puts $order[0]
 		if ($order[0]=="B")
@@ -60,22 +67,29 @@ $view = $model.active_view
 			
 			refreshed_view = $view.refresh
 		end
+		
 		}
 #	end
 	#$streamSock.close
 	puts "Socket closed"
 }
-
+$t1.abort_on_exception = true
 UI.start_timer(0,false){
-#Thread.new{
-	log(1,"")
+#$t2=Thread.new{
 loop{
-	log(2,$strr)
-	puts $data
-	
-	
-	}
+	refreshed_view = $view.refresh
 }
+}
+#$t2.abort_on_exception = true
+#UI.start_timer(0,false){
+
+#Thread.new{
+#	log(1,"")
+#loop{
+#	log(2,$strr)
+#	puts $data	
+#	}
+##}
 
 
 
