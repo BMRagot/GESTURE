@@ -8,11 +8,10 @@
 *  This file is part of GESTURE.                                    *
 *                                                                            *
 *****************************************************************************/
-//#include "GESTURE_Server.h"
-#include "GESTURE_Recognition.h"
 
+#include "GESTURE_Recognition.h"
 #include <QtGui/QApplication>
-//#include <iostream>
+
 
 
 char buffer[120] = "";

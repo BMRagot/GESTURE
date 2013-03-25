@@ -69,43 +69,18 @@ UI.menu("Plugins").add_item("GESTURE...") {
 #						TODO								#
 #############################################################
 
-#DONE	#Demande d'enrgistrement avant de lancer le plugins?-->fonctionne uniquement pour les nouveax fichier pas pour les fichiers modifiés
-#DONE	#DEscription fichier 
-#DONE	#entete fichier html
-#DONE	#recherche pour ejecter la webdialog
-#DONE	#creer fonction de log
-#		#code error
-#		#test du teuber
-#DONE	#nom de fichier complet lors du statut
-#		#si statu NOK prevoir griser btouton d'action
-#		#rajouter les tips sur les status?
-#DONE	#IMPORTANT differencier le code selon macOS ou microshiotte windaube --> not completed on oublie
-#DONE	#ranger file 
-#		#splashscreen image alternative
-#DONE	#regler taille fenetre splashscreen
-#DONE	#bug UI msgBox: windows doesn't display option
-#DONE	#REgler probleme de position
-#		#creer un joli repere avec de quoi afficher les selections...
-#DONE	#définir position et format de la fenetre de control
-#DONE	#control UI:  defilement console
-#DONE	#control UI: prévoir la fonction d'ajout
-#DONE	#control UI: acvier le défilement uniquement si cela ne rentre pas....
-#DONE	#control UI: regler taille console
-#DONE	#probleme du footer du menu principal
-#		#detection fermeture des fenetres
-#DONE	#Police console
-#DONE	#Taille du control qui suit les retractions des modules
-#		#TCP
-#		#STart timer SU pour les boucle regarder de pres
-#		#finir le log durant e splashscreen...
+#		#Enable "start" BUtton if Status is "NOK"
+#		#Add Tips to menu status
+#		#Add alt img to splashscreen
+#		#Modify Frame
+#		#Detect windows closing fermeture des fenetre
+#		#Complete log file with splashscreen result
 
 
 #############################################################
 #						Splash Screen						#
 #############################################################
 def splashscreen
-	
-	#UI.openURL("GESTURE\Interpretation\test sigmanil\TCP\TCPserver\Debug\TCPserver.exe")
 	
 	progressbar_score = 0
 	
@@ -196,11 +171,30 @@ def splashscreen
 	$hostname = 'localhost'
 	$port = 2000
 	puts "Establishing a connection..."
-	$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
-	puts "Connection established"
-	while ($streamSock == nil)
-		$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
-	end
+#	$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
+
+	idsocket=UI.start_timer(2.0,false){
+		puts "new thread start"
+		
+		
+		#loop{
+		$streamSock = TCPSocket.new($hostname, $port)
+		$strr = $streamSock.read(120)
+		#strr = $streamSock.recv(120)
+		$order=$strr.split('/')
+		puts $order[0]
+		if $order[0].include? "hello"
+			UI.stop_timer(idsocket)
+			$SocketTest=true
+		end
+	#TCPSocket.new( "127.0.0.1", 20000 )  
+		puts "Connection established"
+	#while ($streamSock == nil)
+#		$streamSock = TCPSocket.new($hostname, $port)#TCPSocket.new( "127.0.0.1", 20000 )  
+#	end
+	
+		#}
+	}
 	if $streamSock != nil
 		$SocketTest=true
 		
@@ -254,9 +248,7 @@ def menu
   	 	
 	$dlgMenu.set_position $c[0]-menu_width/2, $c[1]-menu_height/2
 	$dlgMenu.set_size menu_width, menu_height
-	
-   	#Show Dialog on modal mode
-	#$dlgMenu.show_modal marche pas sinn ca bloque le javascript
+
 	$dlgMenu.show
 	
 	$dlgMenu.add_action_callback("GESTURE_QUIT") {|dialog, params|
@@ -316,26 +308,9 @@ end
 #############################################################
 def controlgesture
 
-	#repere_width = 150
-  	#repere_height = 200
-  	
-	#toolbar_width = 300
-  	#toolbar_height = 60
-	
   	control_width = 345
   	control_height = 645
 
-	#$c = Sketchup.active_model.active_view.corner 3
-	
-	#dlgRepere = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", repere_width, repere_height, 0, 2*c[1]-repere_height/2, true);
-  	#dlgRepere.set_file File.dirname(__FILE__) + "/GESTURE/Control/repere.html"
-		
-	#dlgRepere.show
-	
-	#dlgToolbar = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTURE", toolbar_width, toolbar_height, 2*c[0], 0, true);
-  	#dlgToolbar.set_file File.dirname(__FILE__) + "/GESTURE/Control/toolbar.html"
-		
-	#dlgToolbar.show
 
 	$dlgControl = UI::WebDialog.new("-=- GESTURE -=-", true, "GESTUREcontrol", control_width , control_height,  0, 0, true);
   	$dlgControl.set_file File.dirname(__FILE__) + "/GESTURE/Control/control.html"

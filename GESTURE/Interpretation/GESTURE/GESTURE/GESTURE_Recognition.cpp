@@ -102,10 +102,6 @@ GESTURE_Recognition::GESTURE_Recognition(QWidget *parent, Qt::WFlags flags)
 	
 
 	userActiveHand = UNDEFINED;
-
-	//KSock = GESTURE_Server();
-	//KSock.initServer();
-
 	
 }
 

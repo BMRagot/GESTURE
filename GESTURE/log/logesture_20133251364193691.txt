@@ -1,0 +1,11 @@
+##########################################################################################
+				GESTURE Plugins 
+					Log File
+		Plugin started :Mon Mar 25 07:41:31 +0100 2013
+						Gesture 2013 Copyright
+##########################################################################################
+SU Version: 8.0.16846
+###RUBY RESOURCES
+Ruby Version :1.8.6
+Load Path updated: All OK
+Load GESTURE.exe: OK

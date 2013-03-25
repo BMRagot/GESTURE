@@ -1,3 +1,10 @@
+##############
+#
+#Dev script to start interpretation 
+#
+###############
+
+
 #script test de socket?
 require $LOAD_PATH[3]+'/socket.so'
 
@@ -16,14 +23,6 @@ $port = 2000
 
 def runsocket
       puts "Establishing a connection..."
-#	s = TCPSocket.open(host, port)
-#	puts "Connection established."
-#	while line = s.gets   # Read lines from the socket
-#		puts line.chop      # And print with platform line terminator
-#	end
-#	s.close
- 
-
 
 $data = []
 $model = Sketchup.active_model
@@ -112,13 +111,6 @@ id=UI.start_timer(0,false){
 #	}
 ##}
 
-
-
-
-#include Socket::Constants
-#$socket = Socket.new( AF_INET, SOCK_STREAM, 0 )
-#sockaddr = Socket.pack_sockaddr_in( 2000, '127.0.0.1' )
-#$socket.connect( sockaddr )
  
 
 end 
